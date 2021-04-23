@@ -1,0 +1,323 @@
+{
+    "name":"didi-app",
+    "work-location": ".",
+    "dest-location": ".",
+    "controls": {
+        "behaviour": {
+            "filters":{"comment-filter":{}}
+        },
+        "mappings": [
+            {"start": "^file:.*go$", "end": "^exec:"}
+        ]
+    },
+    "directories": {
+        "didi": {
+            "dst-ovr": "/src/didi",
+            "directories": {
+                "cmd": {
+                    "directories": {
+                        "test": {
+                            "files": {
+                                "main.go": {}
+                            }
+                        }
+                    },
+                    "files": {
+                        "main.go": {}
+                    }
+                },
+                "profile": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "entries": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "list.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "session": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "googlelogin": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "bloodglucose": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "list.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "insulintake": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "list.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "keynotes": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "list.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                }
+            }
+        },
+        "assets": {
+            "dst-ovr": "/static",
+            "controls": {
+                "mappings": [
+                    {
+                        "start": "^file:.*comp\\.html$",
+                        "end": "^file:.*index\\.html$"
+                    },
+                    {
+                        "start": "^file:.*comp\\.css$",
+                        "end": "^file:.*index\\.css$"
+                    },
+                    {
+                        "start": "^file:.*comp.comp\\.js$",
+                        "end": "^file:.*js.index\\.js$"
+                    },
+                    {
+                        "start": "^file:.*comp.comp-store\\.js$",
+                        "end": "^file:.*js.store\\.js$"
+                    }
+                ]
+            },
+            "directories": {
+                "html": {
+                    "files": {
+                        "index.html": {
+                        }
+                    }
+                },
+                "js": {
+                    "settings": "comment-filter",
+                    "files": {
+                        "comp.js": {
+                            "templates": ["static/didi-ui/didi-ui.js"]
+                        },
+                        "store.js": {}
+                    }
+                },
+                "css": {
+                    "controls": {
+                        "mappings": [
+                            {"start": "^file:.*reset\\.css$", "end": "^file:.*index\\.css$"},
+                            {"start": "^file:.*didi\\.css$", "end": "^file:.*index\\.css$"}
+                        ]
+                    },
+                    "files": {
+                        "index.css": {},
+                        "didi.css": {},
+                        "reset.css": {}
+                    }
+                },
+                "images": {
+                    "controls": {
+                        "behaviour": {
+                            "action": "copy"
+                        }
+                    },
+                    "files": {
+                        "background.jpg": {}
+                    }
+                },
+                "js": {
+                    "controls": {
+                        "mappings": [
+                            {"start": "^file:.*store.js$", "end": "^file:.*index.js$"},
+                            {"start": "^file:.*req.js$", "end": "^file:.*index.js$"}
+                        ]
+                    },
+                    "files": {
+                        "index.js": {},
+                        "store.js": {},
+                        "req.js": {}
+                    }
+                },
+                "comp": {
+                    "controls": {
+                        "mappings": [
+                            {"start": "^file:.*backbutton\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*backbutton\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*backbutton\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*backbutton\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*happy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*happy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*happy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*unhappy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*unhappy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*unhappy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*bloodglucose\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*bloodglucose\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*bloodglucose\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*bloodglucose\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*edit-bloodglucose-form\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*edit-bloodglucose-form\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*edit-bloodglucose-form\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*edit-bloodglucose-form\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*edit-bloodglucose-page\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*edit-bloodglucose-page\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*edit-bloodglucose-page\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*edit-bloodglucose-page\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*edit-data-selection-page\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*edit-data-selection-page\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*edit-data-selection-page\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*edit-data-selection-page\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*edit-insulin-take-form\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*edit-insulin-take-form\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*edit-insulin-take-form\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*edit-insulin-take-form\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*edit-insulin-take-page\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*edit-insulin-take-page\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*edit-insulin-take-page\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*edit-insulin-take-page\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*edit-keynotes-form\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*edit-keynotes-form\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*edit-keynotes-form\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*edit-keynotes-form\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*editable\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*editable\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*editable\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*editable\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*entries-list-page\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*entries-list-page\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*entries-list-page\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*entries-list-page\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*fill-in\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*fill-in\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*fill-in\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*fill-in\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*keynotes-form\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*keynotes-form\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*keynotes-form\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*keynotes-form\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*keynotes-page\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*keynotes-page\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*keynotes-page\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*keynotes-page\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*landing-page\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*landing-page\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*landing-page\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*landing-page\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*login-page\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*login-page\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*login-page\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*login-page\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*navbar\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*navbar\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*navbar\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*navbar\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*new-bloodglucose-entry-form\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*new-bloodglucose-entry-form\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*new-bloodglucose-entry-form\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*new-bloodglucose-entry-form\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*new-entry-data-page\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*new-entry-data-page\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*new-entry-data-page\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*new-entry-data-page\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*new-insulin-data-on-existing-entry\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*new-insulin-data-on-existing-entry\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*new-insulin-data-on-existing-entry\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*new-insulin-data-on-existing-entry\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*new-insulin-entry\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*new-insulin-entry\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*new-insulin-entry\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*new-insulin-entry\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*plusbutton\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*plusbutton\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*plusbutton\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*plusbutton\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*searchbutton\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*searchbutton\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*searchbutton\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*searchbutton\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*setup-page\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*setup-page\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*setup-page\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*setup-page\\.html$", "end": "^file:.*comp-store\\.js$"},
+                            {"start": "^file:.*view-long-term-bloodglucose\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*view-long-term-bloodglucose\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*view-long-term-bloodglucose\\.html$", "end": "^file:.*comp\\.js$"},
+                            {"start": "^file:.*user-bio\\.html$", "end": "^file:.*comp\\.html$"},
+                            {"start": "^file:.*user-bio\\.html$", "end": "^file:.*comp\\.css$"},
+                            {"start": "^file:.*user-bio\\.html$", "end": "^file:.*comp\\.js$"}
+                        ]
+                    },
+                    "files": {
+                        "comp-store.js": {},
+                        "comp.js": {},
+                        "comp.html": {},
+                        "comp.css": {},
+                        "backbutton.html": {},
+                        "bloodglucose.html": {},
+                        "edit-bloodglucose-form.html": {},
+                        "edit-bloodglucose-page.html": {},
+                        "edit-data-selection-page.html": {},
+                        "edit-insulin-take-form.html": {},
+                        "edit-insulin-take-page.html": {},
+                        "edit-keynotes-form.html": {},
+                        "editable.html": {},
+                        "entries-list-page.html": {},
+                        "fill-in.html": {},
+                        "keynotes-form.html": {},
+                        "keynotes-page.html": {},
+                        "landing-page.html": {},
+                        "login-page.html": {},
+                        "navbar.html": {},
+                        "new-bloodglucose-entry-form.html": {},
+                        "new-entry-data-page.html": {},
+                        "new-insulin-data-on-existing-entry.html": {},
+                        "new-insulin-entry.html": {},
+                        "plusbutton.html": {},
+                        "searchbutton.html": {},
+                        "setup-page.html": {},
+                        "view-long-term-bloodglucose.html": {},
+                        "user-bio.html": {}
+                    }
+                }
+            }
+        }
+    },
+    "execs": {
+        "compile-didi": {
+            "cmd": ["go", "build", "-o", "bin/didi", "github.com/geraldtivatyi/didiapp/src/didi/cmd/test"],
+            "timeout": 100000,
+            "env": {"GOOS":"linux"}
+        }
+    }
+}

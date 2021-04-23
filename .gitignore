@@ -1,0 +1,5 @@
+/bin
+/pkg
+/src/github.com
+/node_modules
+.package-lock.json

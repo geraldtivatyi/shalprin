@@ -1,0 +1,333 @@
+/*--------------------------------------------------------------------------------*/
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Button CSS */
+.tc-cursor {
+    cursor: pointer;
+}
+
+/* Text CSS */
+p {margin:0;}
+p {padding:0;}
+
+h2 {margin-bottom:0em;}
+h2 {padding:0;}
+
+.tc-bold {
+    font-weight: bold;
+}
+
+.tc-text-white {
+    color: white;
+}
+
+.tc-text-black {
+    color: black;
+}
+
+.tc-text-darkgrey {
+    color: darkgrey;
+}
+
+.tc-text-orange {
+    color: #FFC200;
+}
+
+.tc-text-center {
+    text-align: center;
+}
+
+.tc-text-left {
+    text-align: left;
+}
+
+.tc-text-right {
+    text-align: right;
+}
+
+/* Border CSS */
+.tc-border-solid {
+    border-style: solid;
+}
+
+.tc-border-hidden {
+    border-style: hidden;
+}
+
+.tc-border-dotted {
+    border-style: dotted;
+}
+
+.tc-border-dashed {
+    border-style: dashed;
+}
+
+.tc-border-bold {
+    border-width: medium;
+}
+
+.tc-border-color-black {
+    border-color: black;
+}
+
+.tc-border-color-darkgrey {
+    border-color: #AEB6BF;
+}
+
+.tc-border-color-grey {
+    border-color: #D6DBDF;
+}
+
+.tc-border-color-red {
+    border-color: red;
+}
+
+.tc-border-color-green {
+    border-color: #2CFF18;
+}
+
+.tc-border-color-orange {
+    border-color: #FFC200;
+}
+
+/* Background CSS*/
+.tc-bg-color-white {
+    background-color: white;
+}
+
+.tc-bg-color-black {
+    background-color: black;
+}
+
+.tc-bg-color-darkgrey {
+    background-color: #AEB6BF;
+}
+
+.tc-bg-color-grey {
+    background-color: #D6DBDF;
+}
+
+.tc-bg-color-red {
+    background-color: red;
+}
+
+.tc-bg-color-green {
+    background-color: #2CFF18;
+}
+
+.tc-bg-color-orange {
+    background-color: #FFC200;
+}
+
+/* Input Box CSS*/
+#search-icon {
+    color: #D6DBDF;
+    margin-right: 0px;
+}
+
+.tc-input-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-auto-rows: minmax(10px, auto);
+    grid-auto-flow: dense;
+}
+
+/*Buttons CSS*/
+.tc.button {
+    border-style:solid;
+    border-radius:8px;
+    padding-left:8px;
+    padding-right:8px;
+    min-width:5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tc.button.grey {
+    background-color:#AEB6BF;
+    border-color: black;
+}
+
+.tc.button.white {
+    background-color:white;
+    border-color:#AEB6BF;
+}
+
+.tc.button.orange {
+    background-color:#FFC200;
+    border-color:black;
+}
+
+.tc.button.left {
+    text-align: left;
+}
+
+.tc.button.center {
+    text-align: center;
+}
+
+.tc.button.right {
+    text-align: right;
+}
+
+.tc.button.fullscreen {
+    width:100%;
+}
+
+.tc-button-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(auto, 400px));
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    grid-auto-rows: minmax(10px, auto);
+    grid-auto-flow: dense;
+}
+
+.tc-buttonAni {
+    max-height: 100%;
+    width: auto;
+    cursor: pointer;
+    transition: transform .2s;
+}
+
+.tc-buttonAni:hover {
+    -ms-transform: scale(1.2); /* IE 9 */
+    -webkit-transform: scale(1.2); /* Safari 3-8 */
+    transform: scale(1.2); 
+}
+
+/*Colour Chart CSS*/
+.tc-tc-colour-chart {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(80px, auto));
+    grid-gap: 2px;
+    grid-auto-rows: minmax(50px, auto);
+}
+
+.tc-colour-chart div {
+    border-radius: 1em;
+    padding: 20px 10px;
+}
+
+.tc-thumbnail6 {
+    padding-top: 10px;
+    padding-left: 20px;
+    border: solid;
+    border-color: darkgrey;
+    border-radius: 14px;
+    width: 300px;
+}
+
+.tc-thumbnail7 {
+    padding-top: 10px;
+    padding-left: 20px;
+    border: solid;
+    border-color: darkgrey;
+    border-radius: 14px;
+    width: 300px;
+}
+
+.tc-thumbnail8 {
+    padding-top: 10px;
+    padding-left: 20px;
+    border: solid;
+    border-color: darkgrey;
+    border-radius: 14px;
+    width: 300px;
+}
+
+.tc-thumbnail9 {
+    padding-top: 10px;
+    padding-left: 20px;
+    border: solid;
+    border-color: darkgrey;
+    border-radius: 14px;
+    width: 300px;
+}
+
+.tc-nested-tn1 {
+    display: grid !important;
+    grid-template-columns: repeat(15,minmax(4px,auto)) !important;
+}
+
+.tc-nested-tn2 {
+    display: grid !important;
+    grid-template-columns: repeat(15,minmax(4px,auto)) !important;
+    grid-auto-rows: minmax(30px,auto);
+}
+
+.tc-nested-tn3 {
+    display: grid !important;
+    grid-template-columns: repeat(15,minmax(4px,auto)) !important;
+}
+
+.tc-nested-tn4 {
+    display: grid !important;
+    grid-template-columns: repeat(10,minmax(2px,auto)) !important;
+}
+
+.tc-nested-tn5 {
+    display: grid !important;
+    grid-template-columns: repeat(15,minmax(4px,auto)) !important;
+}
+
+.tc-nested-tn6 {
+    display: grid !important;
+    grid-template-columns: repeat(10,minmax(4px,auto)) !important;
+}
+
+.tc-nested-tn7 {
+    display: grid;
+    grid-template-columns: repeat(10,minmax(4px,auto)) !important;
+}
+
+.tc-nested-tn8 {
+    display: grid !important;
+    grid-template-columns: repeat(15,minmax(4px,auto)) !important;
+}
+
+.tc-nested-tn9 {
+    display: grid !important;
+    grid-template-columns: repeat(15,minmax(4px,auto)) !important;
+}
+
+/*Google Maps CSS*/
+#google_maps {
+    height: 600px;
+    width: 800px;
+}
+#map {
+    height: 100%;
+    width: 100%;
+    margin-left:340px;
+    margin-right:40px;
+}
+
+
+
+/*Screen size CSS editing*/
+@media only screen and (min-width:441px){
+
+}
+@media only screen and (min-width:601px){
+ 
+}
+@media only screen and (min-width:993px){
+
+}
+@media only screen and (min-width:1359px){
+
+}

@@ -1,0 +1,411 @@
+{
+    "name":"didi-app",
+    "testing": true,
+    "directories": {
+        "global": {
+            "from": ".",
+            "dest": ".",
+            "files": {
+                "docker-compose.yml.tmpl": {}
+            }
+        },
+        "didi": {
+            "dest": "/src/didi",
+            "directories": {
+                "cmd": {
+                    "directories": {
+                        "test": {
+                            "files": {
+                                "main.go": {}
+                            }
+                        }
+                    },
+                    "files": {
+                        "main.go": {}
+                    }
+                },
+                "profile": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "entries": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "list.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "session": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "googlelogin": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "bloodglucose": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "list.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "insulintake": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "list.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "keynotes": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "list.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                }
+            }
+        },
+        "static": {
+            "directories": {
+                "html": {
+                    "settings": "comment-filter",
+                    "files": {
+                        "index.html": {
+                            "templates": ["static/didi-ui/didi-ui.html"]
+                        }
+                    }
+                },
+                "js": {
+                    "settings": "comment-filter",
+                    "files": {
+                        "comp.js": {
+                            "templates": ["static/didi-ui/didi-ui.js"]
+                        },
+                        "store.js": {}
+                    }
+                },
+                "css": {
+                    "settings": "comment-filter",
+                    "files": {
+                        "main.css": {
+                            "templates": ["static/didi-ui/didi-ui.css"]
+                        }
+                    }
+                },
+                "images": {
+                    "settings": "copy-only",
+                    "files": {
+                        "beach.jpg": {}
+                    }
+                },
+                "didi-ui": {
+                    "directories": {
+                        "fill-in": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "fill-in.html": {},
+                                "fill-in.js": {},
+                                "fill-in.css": {}
+                            }
+                        },
+                        "editable": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "editable.html": {},
+                                "editable.js": {},
+                                "editable.css": {}
+                            }
+                        },
+                        "landing-page": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "landing-page.html": {},
+                                "landing-page.js": {},
+                                "landing-page.css": {}
+                            }
+                        },
+                        "login-page": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "login-page.html": {},
+                                "login-page.js": {},
+                                "login-page.css": {}
+                            }
+                        },
+                        "setup-page": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "setup-page.html": {},
+                                "setup-page.js": {},
+                                "setup-page.css": {}
+                            }
+                        },
+                        "navbar": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "navbar.html": {},
+                                "navbar.js": {},
+                                "navbar.css": {}
+                            }
+                        },
+                        "entries-list-page": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "entries-list-page.html": {},
+                                "entries-list-page.js": {},
+                                "entries-list-page.css": {}
+                            }
+                        },
+                        "new-entry-data-page": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "new-entry-data-page.html": {},
+                                "new-entry-data-page.js": {},
+                                "new-entry-data-page.css": {}
+                            }
+                        },
+                        "new-insulin-entry": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "new-insulin-entry.html": {},
+                                "new-insulin-entry.js": {},
+                                "new-insulin-entry.css": {}
+                            }
+                        },
+                        "edit-insulin-take-form": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "edit-insulin-take-form.html": {},
+                                "edit-insulin-take-form.js": {},
+                                "edit-insulin-take-form.css": {}
+                            }
+                        },
+                        "edit-insulin-take-page": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "edit-insulin-take-page.html": {},
+                                "edit-insulin-take-page.js": {},
+                                "edit-insulin-take-page.css": {}
+                            }
+                        },
+                        "edit-bloodglucose-page": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "edit-bloodglucose-page.html": {},
+                                "edit-bloodglucose-page.js": {},
+                                "edit-bloodglucose-page.css": {}
+                            }
+                        },
+                        "edit-bloodglucose-form": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "edit-bloodglucose-form.html": {},
+                                "edit-bloodglucose-form.js": {},
+                                "edit-bloodglucose-form.css": {}
+                            }
+                        },
+                        "new-bloodglucose-entry-form": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "new-bloodglucose-entry-form.html": {},
+                                "new-bloodglucose-entry-form.js": {},
+                                "new-bloodglucose-entry-form.css": {}
+                            }
+                        },
+                        "bloodglucose": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "bloodglucose.html": {},
+                                "bloodglucose.js": {},
+                                "bloodglucose.css": {}
+                            }
+                        },
+                        "new-insulin-data-on-existing-entry": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "new-insulin-data-on-existing-entry.html": {},
+                                "new-insulin-data-on-existing-entry.js": {},
+                                "new-insulin-data-on-existing-entry.css": {}
+                            }
+                        },
+                        "keynotes-form": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "keynotes-form.html": {},
+                                "keynotes-form.js": {},
+                                "keynotes-form.css": {}
+                            }
+                        },
+                        "edit-keynotes-form": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "edit-keynotes-form.html": {},
+                                "edit-keynotes-form.js": {},
+                                "edit-keynotes-form.css": {}
+                            }
+                        },
+                        "keynotes-page": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "keynotes-page.html": {},
+                                "keynotes-page.js": {},
+                                "keynotes-page.css": {}
+                            }
+                        },
+                        "searchbutton": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "searchbutton.html": {},
+                                "searchbutton.js": {},
+                                "searchbutton.css": {}
+                            }
+                        },
+                        "backbutton": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "backbutton.html": {},
+                                "backbutton.js": {},
+                                "backbutton.css": {}
+                            }
+                        },
+                        "plusbutton": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "plusbutton.html": {},
+                                "plusbutton.js": {},
+                                "plusbutton.css": {}
+                            }
+                        },
+                        "edit-data-selection-page": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "edit-data-selection-page.html": {},
+                                "edit-data-selection-page.js": {},
+                                "edit-data-selection-page.css": {}
+                            }
+                        }
+                    },
+                    "settings": "comment-filter",
+                    "files": {
+                        "didi-ui.html": {
+                            "templates": [
+                                "static/didi-ui/fill-in/fill-in.html",
+                                "static/didi-ui/editable/editable.html",
+                                "static/didi-ui/landing-page/landing-page.html",
+                                "static/didi-ui/login-page/login-page.html",
+                                "static/didi-ui/setup-page/setup-page.html",
+                                "static/didi-ui/navbar/navbar.html",
+                                "static/didi-ui/entries-list-page/entries-list-page.html",
+                                "static/didi-ui/new-entry-data-page/new-entry-data-page.html",
+                                "static/didi-ui/new-insulin-entry/new-insulin-entry.html",
+                                "static/didi-ui/edit-insulin-take-form/edit-insulin-take-form.html",
+                                "static/didi-ui/edit-insulin-take-page/edit-insulin-take-page.html",
+                                "static/didi-ui/edit-bloodglucose-page/edit-bloodglucose-page.html",
+                                "static/didi-ui/edit-bloodglucose-form/edit-bloodglucose-form.html",
+                                "static/didi-ui/new-bloodglucose-entry-form/new-bloodglucose-entry-form.html",
+                                "static/didi-ui/bloodglucose/bloodglucose.html",
+                                "static/didi-ui/new-insulin-data-on-existing-entry/new-insulin-data-on-existing-entry.html",
+                                "static/didi-ui/keynotes-form/keynotes-form.html",
+                                "static/didi-ui/keynotes-page/keynotes-page.html",
+                                "static/didi-ui/searchbutton/searchbutton.html",
+                                "static/didi-ui/backbutton/backbutton.html",
+                                "static/didi-ui/plusbutton/plusbutton.html",
+                                "static/didi-ui/edit-data-selection-page/edit-data-selection-page.html",
+                                "static/didi-ui/edit-keynotes-form/edit-keynotes-form.html"
+                            ]
+                        },
+                        "didi-ui.js": {
+                            "templates": [
+                                "static/didi-ui/fill-in/fill-in.js",
+                                "static/didi-ui/editable/editable.js",
+                                "static/didi-ui/landing-page/landing-page.js",
+                                "static/didi-ui/login-page/login-page.js",
+                                "static/didi-ui/setup-page/setup-page.js",
+                                "static/didi-ui/navbar/navbar.js",
+                                "static/didi-ui/entries-list-page/entries-list-page.js",
+                                "static/didi-ui/new-entry-data-page/new-entry-data-page.js",
+                                "static/didi-ui/new-insulin-entry/new-insulin-entry.js",
+                                "static/didi-ui/edit-insulin-take-form/edit-insulin-take-form.js",
+                                "static/didi-ui/edit-insulin-take-page/edit-insulin-take-page.js",
+                                "static/didi-ui/edit-bloodglucose-page/edit-bloodglucose-page.js",
+                                "static/didi-ui/edit-bloodglucose-form/edit-bloodglucose-form.js",
+                                "static/didi-ui/new-bloodglucose-entry-form/new-bloodglucose-entry-form.js",
+                                "static/didi-ui/bloodglucose/bloodglucose.js",
+                                "static/didi-ui/new-insulin-data-on-existing-entry/new-insulin-data-on-existing-entry.js",
+                                "static/didi-ui/keynotes-form/keynotes-form.js",
+                                "static/didi-ui/keynotes-page/keynotes-page.js",
+                                "static/didi-ui/searchbutton/searchbutton.js",
+                                "static/didi-ui/backbutton/backbutton.js",
+                                "static/didi-ui/plusbutton/plusbutton.js",
+                                "static/didi-ui/edit-data-selection-page/edit-data-selection-page.js",
+                                "static/didi-ui/edit-keynotes-form/edit-keynotes-form.js"
+                            ]
+                        },
+                        "didi-ui.css": {
+                            "templates": [
+                                "static/didi-ui/fill-in/fill-in.css",
+                                "static/didi-ui/editable/editable.css",
+                                "static/didi-ui/landing-page/landing-page.css",
+                                "static/didi-ui/login-page/login-page.css",
+                                "static/didi-ui/setup-page/setup-page.css",
+                                "static/didi-ui/navbar/navbar.css",
+                                "static/didi-ui/entries-list-page/entries-list-page.css",
+                                "static/didi-ui/new-entry-data-page/new-entry-data-page.css",
+                                "static/didi-ui/new-insulin-entry/new-insulin-entry.css",
+                                "static/didi-ui/edit-insulin-take-form/edit-insulin-take-form.css",
+                                "static/didi-ui/edit-insulin-take-page/edit-insulin-take-page.css",
+                                "static/didi-ui/edit-bloodglucose-page/edit-bloodglucose-page.css",
+                                "static/didi-ui/edit-bloodglucose-form/edit-bloodglucose-form.css",
+                                "static/didi-ui/new-bloodglucose-entry-form/new-bloodglucose-entry-form.css",
+                                "static/didi-ui/bloodglucose/bloodglucose.css",
+                                "static/didi-ui/new-insulin-data-on-existing-entry/new-insulin-data-on-existing-entry.css",
+                                "static/didi-ui/keynotes-form/keynotes-form.css",
+                                "static/didi-ui/keynotes-page/keynotes-page.css",
+                                "static/didi-ui/searchbutton/searchbutton.css",
+                                "static/didi-ui/backbutton/backbutton.css",
+                                "static/didi-ui/plusbutton/plusbutton.css",
+                                "static/didi-ui/edit-data-selection-page/edit-data-selection-page.css",
+                                "static/didi-ui/edit-keynotes-form/edit-keynotes-form.css"
+                            ]
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "execs": {
+        "compile-didi": {
+            "cmd": ["go", "build", "-o", "bin/didi", "github.com/geraldtivatyi/didiapp/src/didi/cmd"],
+            "timeout": 100000,
+            "env": {"GOOS":"linux"}
+        }
+    }
+}
