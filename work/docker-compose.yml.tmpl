@@ -1,6 +1,34 @@
 version: '3.7' 
 
 services:
+  gateway:
+    build: .
+    working_dir: /opt/gateway
+    volumes: 
+      - "./bin/gateway:/opt/gateway/bin/gateway"
+      - "./static:/opt/gateway/static"
+      {{- if .Testing }}
+      {{- else }}
+      - "./certs:/opt/gateway/certs"
+      {{- end }}
+    environment:
+      {{ if .Testing -}} 
+      - "DB_NAME=test"
+      - "DB_USER=test"
+      - "DB_PASSWORD=password"
+      - "DB_ADDRESS=shalprin-db"
+      {{- else -}}
+      - "SECURE=true"
+      {{- end }}
+    ports:
+      {{ if .Testing -}}
+      - 9001:9000
+      {{- else -}}
+      - 80:80
+      - 443:443
+      {{- end }}
+    entrypoint: /opt/gateway/bin/gateway
+
   profile:
     build: .
     volumes: 
@@ -14,7 +42,7 @@ services:
       - "DB_ADDRESS=shalprin-db"
     {{- end }}
     ports:
-      - 9001:9000
+      - 9002:9000
     entrypoint: /opt/profile/bin/profile
 
   {{ if .Testing -}}

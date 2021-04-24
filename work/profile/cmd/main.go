@@ -42,7 +42,7 @@ func main() {
 	mux.Handle("/api/v1/", NF().Notify().Entry())
 
 	httpServer := &http.Server{
-		Addr:           ":8080",
+		Addr:           ":9000",
 		Handler:        mux,
 		ReadTimeout:    60 * time.Second,
 		WriteTimeout:   60 * time.Second,

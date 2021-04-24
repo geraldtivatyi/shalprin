@@ -1,9 +1,23 @@
 version: '3.7' 
 
 services:
+  gateway:
+    build: .
+    working_dir: /opt/gateway
+    volumes: 
+      - "./bin/gateway:/opt/gateway/bin/gateway"
+      - "./static:/opt/gateway/static"
+    environment:
+      - "DB_NAME=test"
+      - "DB_USER=test"
+      - "DB_PASSWORD=password"
+      - "DB_ADDRESS=shalprin-db"
+    ports:
+      - 9001:9000
+    entrypoint: /opt/gateway/bin/gateway
+
   profile:
     build: .
-    working_dir: /opt/profile
     volumes: 
       - "./bin/profile:/opt/profile/bin/profile"
     environment:
@@ -12,9 +26,9 @@ services:
       - "DB_PASSWORD=password"
       - "DB_ADDRESS=shalprin-db"
     ports:
-      - 9001:9000
-    entrypoint: /opt/profile/bin
-    
+      - 9002:9000
+    entrypoint: /opt/profile/bin/profile
+
   shalprin-db:
     image: mariadb
     restart: always

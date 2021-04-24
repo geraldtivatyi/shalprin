@@ -9,19 +9,33 @@
                 "docker-compose.yml.tmpl": {}
             }
         },
-        "cmd": {
-            "dest": "/src/cmd",
+        "gateway": {
+            "dest": "/src/gateway",
             "directories": {
-                "test": {
+                "cmd": {
+                    "directories": {
+                        "test": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "main.go": {}
+                            }
+                        }
+                    },
                     "settings": "comment-filter",
                     "files": {
                         "main.go": {}
                     }
+                },
+                "session": {
+                    "settings": "comment-filter",
+                    "files": {
+                        "device.go": {},
+                        "controller.go": {},
+                        "model.go": {},
+                        "view.go": {},
+                        "record.go": {}
+                    }
                 }
-            },
-            "settings": "comment-filter",
-            "files": {
-                "main.go": {}
             }
         },
         "profile": {
@@ -33,17 +47,14 @@
                 "model.go": {},
                 "record.go": {},
                 "view.go": {}
-            }
-        },
-        "session": {
-            "dest": "/src/session",
-            "settings": "comment-filter",
-            "files": {
-                "device.go": {},
-                "controller.go": {},
-                "model.go": {},
-                "view.go": {},
-                "record.go": {}
+            },
+            "directories": {
+                "cmd": {
+                    "settings": "comment-filter",
+                    "files": {
+                        "main.go": {}
+                    }
+                }
             }
         },
         "static": {
@@ -88,7 +99,7 @@
                                 "fontawesome-webfont.svg": {
                                     "templates": ["static/assets/fonts/fontawesome-webfont.svg"]
                                 },
-                                "fontawesome-webfont.ttg": {
+                                "fontawesome-webfont.ttf": {
                                     "templates": ["static/assets/fonts/fontawesome-webfont.ttf"]
                                 },
                                 "fontawesome-webfont.woff": {
@@ -107,19 +118,35 @@
                                 "ie": {
                                     "settings": "comment-filter",
                                     "files": {
-                                        "html5shiv.js": {},
-                                        "PIE.htc": {},
-                                        "respond.min.ks": {}
+                                        "html5shiv.js": {
+                                            "templates": ["static/assets/js/ie/html5shiv.js"]
+                                        },
+                                        "PIE.htc": {
+                                            "templates": ["static/assets/js/ie/PIE.htc"]
+                                        },
+                                        "respond.min.js": {
+                                            "templates": ["static/assets/js/ie/respond.min.js"]
+                                        }
                                     }
                                 }
                             },
                             "settings": "comment-filter",
                             "files": {
-                                "jquery.dropotron.min.js": {},
-                                "jquery.min.js": {},
-                                "main.js": {},
-                                "skel.min.js": {},
-                                "util.js": {}
+                                "jquery.dropotron.min.js": {
+                                    "templates": ["static/assets/js/jquery.dropotron.min.js"]
+                                },
+                                "jquery.min.js": {
+                                    "templates": ["static/assets/js/jquery.min.js"]
+                                },
+                                "main.js": {
+                                    "templates": ["static/assets/js/main.js"]
+                                },
+                                "skel.min.js": {
+                                    "templates": ["static/assets/js/skel.min.js"]
+                                },
+                                "util.js": {
+                                    "templates": ["static/assets/js/util.js"]
+                                }
                             }
                         },
                         "sass": {
@@ -127,55 +154,116 @@
                                 "libs": {
                                     "settings": "comment-filter",
                                     "files": {
-                                        "_functions.scss": {},
-                                        "_mixins.scss": {},
-                                        "_skei.scss": {},
-                                        "_vars.scss": {}
+                                        "_functions.scss": {
+                                            "templates": ["static/assets/sass/libs/_functions.scss"]
+                                        },
+                                        "_mixins.scss": {
+                                            "templates": ["static/assets/sass/libs/_mixins.scss"]
+                                        },
+                                        "_skei.scss": {
+                                            "templates": ["static/assets/sass/libs/_skei.scss"]
+                                        },
+                                        "_vars.scss": {
+                                            "templates": ["static/assets/sass/libs/_vars.scss"]
+                                        }
                                     }
                                 }
                             },
                             "settings": "comment-filter",
                             "files": {
-                                "ie8.scss": {},
-                                "main.scss": {}
+                                "ie8.scss": {
+                                    "templates": ["static/assets/sass/ie8.scss"]
+                                },
+                                "main.scss": {
+                                    "templates": ["static/assets/sass/main.scss"]
+                                }
                             }
                         }
                     }
                 },
                 "images": {
                     "files": {
-                        "AccountsButton.png": {},
-                        "bus.png": {},
-                        "LocationA.png": {},
-                        "lock.png": {},
-                        "minusbutton.png": {},
-                        "pic01.png": {},
-                        "pic02.png": {},
-                        "pic03.png": {},
-                        "pic04.png": {},
-                        "pic05.png": {},
-                        "pic06.png": {},
-                        "pic07.png": {},
-                        "plusbutton.png": {},
-                        "ProjectButton.png": {},
-                        "SearchButton.png": {},
-                        "SettingsButton.png": {},
-                        "SignUpButton.png": {},
-                        "star.png": {}
+                        "AccountsButton.png": {
+                            "templates": ["static/images/AccountsButton.png"]
+                        },
+                        "bus.png": {
+                            "templates": ["static/images/bus.png"]
+                        },
+                        "LocationA.png": {
+                            "templates": ["static/images/LocationA.png"]
+                        },
+                        "lock.png": {
+                            "templates": ["static/images/lock.png"]
+                        },
+                        "minusbutton.png": {
+                            "templates": ["static/images/minusbutton.png"]
+                        },
+                        "pic01.png": {
+                            "templates": ["static/images/pic01.png"]
+                        },
+                        "pic02.png": {
+                            "templates": ["static/images/pic02.png"]
+                        },
+                        "pic03.png": {
+                            "templates": ["static/images/pic03.png"]
+                        },
+                        "pic04.png": {
+                            "templates": ["static/images/pic04.png"]
+                        },
+                        "pic05.png": {
+                            "templates": ["static/images/pic05.png"]
+                        },
+                        "pic06.png": {
+                            "templates": ["static/images/pic06.png"]
+                        },
+                        "pic07.png": {
+                            "templates": ["static/images/pic07.png"]
+                        },
+                        "plusbutton.png": {
+                            "templates": ["static/images/plusbutton.png"]
+                        },
+                        "ProjectButton.png": {
+                            "templates": ["static/images/ProjectButton.png"]
+                        },
+                        "SearchButton.png": {
+                            "templates": ["static/images/SearchButton.png"]
+                        },
+                        "SettingsButton.png": {
+                            "templates": ["static/images/SettingsButton.png"]
+                        },
+                        "SignUpButton.png": {
+                            "templates": ["static/images/SignUpButton.png"]
+                        },
+                        "star.png": {
+                            "templates": ["static/images/star.png"]
+                        }
                     }
                 },
                 "files": {
-                    "index.html": {},
-                    "left-sidebar.html": {},
-                    "no-sidebar.html": {},
-                    "right-sidebar.html": {}
+                    "index.html": {
+                        "templates": ["static/index.html"]
+                    },
+                    "left-sidebar.html": {
+                        "templates": ["static/left-sidebar.html"]
+                    },
+                    "no-sidebar.html": {
+                        "templates": ["static/no-sidebar.html"]
+                    },
+                    "right-sidebar.html": {
+                        "templates": ["static/right-sidebar.html"]
+                    }
                 }
             }
         }
     },
     "execs": {
+        "compile-gatewat": {
+            "cmd": ["go", "build", "-o", "bin/gateway", "github.com/geraldtivatyi/shalprin/src/gateway/cmd"],
+            "timeout": 100000,
+            "env": {"GOOS":"linux"}
+        },
         "compile-profile": {
-            "cmd": ["go", "build", "-o", "bin", "github.com/geraldtivatyi/shalprin/src/cmd/test"],
+            "cmd": ["go", "build", "-o", "bin/profile", "github.com/geraldtivatyi/shalprin/src/profile/cmd"],
             "timeout": 100000,
             "env": {"GOOS":"linux"}
         }
