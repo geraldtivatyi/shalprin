@@ -1,321 +1,217 @@
 {
-    "name":"didi-app",
-    "work-location": ".",
-    "dest-location": ".",
-    "controls": {
-        "behaviour": {
-            "filters":{"comment-filter":{}}
-        },
-        "mappings": [
-            {"start": "^file:.*go$", "end": "^exec:"}
-        ]
-    },
+    "name":"shalprin",
+    "testing": false,
     "directories": {
-        "didi": {
-            "dst-ovr": "/src/didi",
+        "global": {
+            "from": ".",
+            "dest": ".",
+            "files": {
+                "docker-compose.yml.tmpl": {}
+            }
+        },
+        "cmd": {
+            "dest": "/src/cmd",
             "directories": {
-                "cmd": {
-                    "directories": {
-                        "test": {
-                            "files": {
-                                "main.go": {}
-                            }
-                        }
-                    },
+                "test": {
+                    "settings": "comment-filter",
                     "files": {
                         "main.go": {}
                     }
-                },
-                "profile": {
-                    "files": {
-                        "controller.go": {},
-                        "device.go": {},
-                        "model.go": {},
-                        "record.go": {},
-                        "view.go": {}
-                    }
-                },
-                "entries": {
-                    "files": {
-                        "controller.go": {},
-                        "device.go": {},
-                        "list.go": {},
-                        "model.go": {},
-                        "record.go": {},
-                        "view.go": {}
-                    }
-                },
-                "session": {
-                    "files": {
-                        "controller.go": {},
-                        "device.go": {},
-                        "model.go": {},
-                        "record.go": {},
-                        "view.go": {}
-                    }
-                },
-                "googlelogin": {
-                    "files": {
-                        "controller.go": {},
-                        "device.go": {},
-                        "model.go": {},
-                        "record.go": {},
-                        "view.go": {}
-                    }
-                },
-                "bloodglucose": {
-                    "files": {
-                        "controller.go": {},
-                        "device.go": {},
-                        "list.go": {},
-                        "model.go": {},
-                        "record.go": {},
-                        "view.go": {}
-                    }
-                },
-                "insulintake": {
-                    "files": {
-                        "controller.go": {},
-                        "device.go": {},
-                        "list.go": {},
-                        "model.go": {},
-                        "record.go": {},
-                        "view.go": {}
-                    }
-                },
-                "keynotes": {
-                    "files": {
-                        "controller.go": {},
-                        "device.go": {},
-                        "list.go": {},
-                        "model.go": {},
-                        "record.go": {},
-                        "view.go": {}
-                    }
                 }
+            },
+            "settings": "comment-filter",
+            "files": {
+                "main.go": {}
             }
         },
-        "assets": {
-            "dst-ovr": "/static",
-            "controls": {
-                "mappings": [
-                    {
-                        "start": "^file:.*comp\\.html$",
-                        "end": "^file:.*index\\.html$"
-                    },
-                    {
-                        "start": "^file:.*comp\\.css$",
-                        "end": "^file:.*index\\.css$"
-                    },
-                    {
-                        "start": "^file:.*comp.comp\\.js$",
-                        "end": "^file:.*js.index\\.js$"
-                    },
-                    {
-                        "start": "^file:.*comp.comp-store\\.js$",
-                        "end": "^file:.*js.store\\.js$"
-                    }
-                ]
-            },
+        "profile": {
+            "dest": "/src/profile",
+            "settings": "comment-filter",
+            "files": {
+                "controller.go": {},
+                "device.go": {},
+                "model.go": {},
+                "record.go": {},
+                "view.go": {}
+            }
+        },
+        "session": {
+            "dest": "/src/session",
+            "settings": "comment-filter",
+            "files": {
+                "device.go": {},
+                "controller.go": {},
+                "model.go": {},
+                "view.go": {},
+                "record.go": {}
+            }
+        },
+        "static": {
+            "work-location": ".",
+            "dest-location": "static",
             "directories": {
-                "html": {
-                    "files": {
-                        "index.html": {
-                        }
-                    }
-                },
-                "js": {
-                    "settings": "comment-filter",
-                    "files": {
-                        "comp.js": {
-                            "templates": ["static/didi-ui/didi-ui.js"]
+                "assets": {
+                    "directories": {
+                        "css": {
+                            "directories": {
+                                "images": {
+                                    "settings": "comment-filter",
+                                    "files": {
+                                        "bg01.png": {
+                                            "templates": ["static/assets/css/images/bg01.png"]
+                                        }
+                                    }
+                                }
+                            },
+                            "settings": "comment-filter",
+                            "files": {
+                                "font-awesome.min.css": {
+                                    "templates": ["static/assets/css/font-awesome.min.css"]
+                                },
+                                "ie8.css": {
+                                    "templates": ["static/assets/css/ie8.css"]
+                                },
+                                "lib.css": {
+                                    "templates": ["static/assets/css/lib.css"]
+                                },
+                                "main.css": {
+                                    "templates": ["static/assets/css/main.css"]
+                                }
+                            }
                         },
-                        "store.js": {}
-                    }
-                },
-                "css": {
-                    "controls": {
-                        "mappings": [
-                            {"start": "^file:.*reset\\.css$", "end": "^file:.*index\\.css$"},
-                            {"start": "^file:.*didi\\.css$", "end": "^file:.*index\\.css$"}
-                        ]
-                    },
-                    "files": {
-                        "index.css": {},
-                        "didi.css": {},
-                        "reset.css": {}
+                        "fonts": {
+                            "settings": "comment-filter",
+                            "files": {
+                                "fontawesome-webfont.eot": {
+                                    "templates": ["static/assets/fonts/fontawesome-webfont.eot"]
+                                },
+                                "fontawesome-webfont.svg": {
+                                    "templates": ["static/assets/fonts/fontawesome-webfont.svg"]
+                                },
+                                "fontawesome-webfont.ttg": {
+                                    "templates": ["static/assets/fonts/fontawesome-webfont.ttf"]
+                                },
+                                "fontawesome-webfont.woff": {
+                                    "templates": ["static/assets/fonts/fontawesome-webfont.woff"]
+                                },
+                                "fontawesome-webfont.woff2": {
+                                    "templates": ["static/assets/fonts/fontawesome-webfont.woff2"]
+                                },
+                                "FontAwesome.otf": {
+                                    "templates": ["static/assets/fonts/FontAwesome.otf"]
+                                }
+                            }
+                        },
+                        "js": {
+                            "directories": {
+                                "ie": {
+                                    "settings": "comment-filter",
+                                    "files": {
+                                        "html5shiv.js": {},
+                                        "PIE.htc": {},
+                                        "respond.min.ks": {}
+                                    }
+                                }
+                            },
+                            "settings": "comment-filter",
+                            "files": {
+                                "jquery.dropotron.min.js": {},
+                                "jquery.min.js": {},
+                                "main.js": {},
+                                "skel.min.js": {},
+                                "util.js": {}
+                            }
+                        },
+                        "sass": {
+                            "directories": {
+                                "libs": {
+                                    "settings": "comment-filter",
+                                    "files": {
+                                        "_functions.scss": {},
+                                        "_mixins.scss": {},
+                                        "_skei.scss": {},
+                                        "_vars.scss": {}
+                                    }
+                                }
+                            },
+                            "settings": "comment-filter",
+                            "files": {
+                                "ie8.scss": {},
+                                "main.scss": {}
+                            }
+                        }
                     }
                 },
                 "images": {
-                    "controls": {
-                        "behaviour": {
-                            "action": "copy"
+                    "files": {
+                        "AccountsButton.png": {
+                            "templates": ["static/images/AccountsButton.png"]
+                        },
+                        "bus.png": {
+                            "templates": ["static/images/bus.png"]
+                        },
+                        "LocationA.png": {
+                            "templates": ["static/images/LocationA.png"]
+                        },
+                        "lock.png": {
+                            "templates": ["static/images/lock.png"]
+                        },
+                        "minusbutton.png": {
+                            "templates": ["static/images/minusbutton.png"]
+                        },
+                        "pic01.png": {
+                            "templates": ["static/images/pic01.png"]
+                        },
+                        "pic02.png": {
+                            "templates": ["static/images/pic02.png"]
+                        },
+                        "pic03.png": {
+                            "templates": ["static/images/pic03.png"]
+                        },
+                        "pic04.png": {
+                            "templates": ["static/images/pic04.png"]
+                        },
+                        "pic05.png": {
+                            "templates": ["static/images/pic05.png"]
+                        },
+                        "pic06.png": {
+                            "templates": ["static/images/pic06.png"]
+                        },
+                        "pic07.png": {
+                            "templates": ["static/images/pic07.png"]
+                        },
+                        "plusbutton.png": {
+                            "templates": ["static/images/plusbutton.png"]
+                        },
+                        "ProjectButton.png": {
+                            "templates": ["static/images/ProjectButton.png"]
+                        },
+                        "SearchButton.png": {
+                            "templates": ["static/images/SearchButton.png"]
+                        },
+                        "SettingsButton.png": {
+                            "templates": ["static/images/SettingsButton.png"]
+                        },
+                        "SignUpButton.png": {
+                            "templates": ["static/images/SignUpButton.png"]
+                        },
+                        "star.png": {
+                            "templates": ["static/images/star.png"]
                         }
-                    },
-                    "files": {
-                        "background.jpg": {}
                     }
                 },
-                "js": {
-                    "controls": {
-                        "mappings": [
-                            {"start": "^file:.*store.js$", "end": "^file:.*index.js$"},
-                            {"start": "^file:.*req.js$", "end": "^file:.*index.js$"}
-                        ]
-                    },
-                    "files": {
-                        "index.js": {},
-                        "store.js": {},
-                        "req.js": {}
-                    }
-                },
-                "comp": {
-                    "controls": {
-                        "mappings": [
-                            {"start": "^file:.*backbutton\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*backbutton\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*backbutton\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*backbutton\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*happy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*happy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*happy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*unhappy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*unhappy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*unhappy-bloodglucose-icon\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*bloodglucose\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*bloodglucose\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*bloodglucose\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*bloodglucose\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*edit-bloodglucose-form\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*edit-bloodglucose-form\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*edit-bloodglucose-form\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*edit-bloodglucose-form\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*edit-bloodglucose-page\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*edit-bloodglucose-page\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*edit-bloodglucose-page\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*edit-bloodglucose-page\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*edit-data-selection-page\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*edit-data-selection-page\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*edit-data-selection-page\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*edit-data-selection-page\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*edit-insulin-take-form\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*edit-insulin-take-form\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*edit-insulin-take-form\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*edit-insulin-take-form\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*edit-insulin-take-page\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*edit-insulin-take-page\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*edit-insulin-take-page\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*edit-insulin-take-page\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*edit-keynotes-form\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*edit-keynotes-form\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*edit-keynotes-form\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*edit-keynotes-form\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*editable\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*editable\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*editable\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*editable\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*entries-list-page\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*entries-list-page\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*entries-list-page\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*entries-list-page\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*fill-in\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*fill-in\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*fill-in\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*fill-in\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*keynotes-form\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*keynotes-form\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*keynotes-form\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*keynotes-form\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*keynotes-page\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*keynotes-page\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*keynotes-page\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*keynotes-page\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*landing-page\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*landing-page\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*landing-page\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*landing-page\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*login-page\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*login-page\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*login-page\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*login-page\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*navbar\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*navbar\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*navbar\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*navbar\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*new-bloodglucose-entry-form\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*new-bloodglucose-entry-form\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*new-bloodglucose-entry-form\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*new-bloodglucose-entry-form\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*new-entry-data-page\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*new-entry-data-page\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*new-entry-data-page\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*new-entry-data-page\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*new-insulin-data-on-existing-entry\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*new-insulin-data-on-existing-entry\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*new-insulin-data-on-existing-entry\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*new-insulin-data-on-existing-entry\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*new-insulin-entry\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*new-insulin-entry\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*new-insulin-entry\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*new-insulin-entry\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*plusbutton\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*plusbutton\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*plusbutton\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*plusbutton\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*searchbutton\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*searchbutton\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*searchbutton\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*searchbutton\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*setup-page\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*setup-page\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*setup-page\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*setup-page\\.html$", "end": "^file:.*comp-store\\.js$"},
-                            {"start": "^file:.*view-long-term-bloodglucose\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*view-long-term-bloodglucose\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*view-long-term-bloodglucose\\.html$", "end": "^file:.*comp\\.js$"},
-                            {"start": "^file:.*user-bio\\.html$", "end": "^file:.*comp\\.html$"},
-                            {"start": "^file:.*user-bio\\.html$", "end": "^file:.*comp\\.css$"},
-                            {"start": "^file:.*user-bio\\.html$", "end": "^file:.*comp\\.js$"}
-                        ]
-                    },
-                    "files": {
-                        "comp-store.js": {},
-                        "comp.js": {},
-                        "comp.html": {},
-                        "comp.css": {},
-                        "backbutton.html": {},
-                        "bloodglucose.html": {},
-                        "edit-bloodglucose-form.html": {},
-                        "edit-bloodglucose-page.html": {},
-                        "edit-data-selection-page.html": {},
-                        "edit-insulin-take-form.html": {},
-                        "edit-insulin-take-page.html": {},
-                        "edit-keynotes-form.html": {},
-                        "editable.html": {},
-                        "entries-list-page.html": {},
-                        "fill-in.html": {},
-                        "keynotes-form.html": {},
-                        "keynotes-page.html": {},
-                        "landing-page.html": {},
-                        "login-page.html": {},
-                        "navbar.html": {},
-                        "new-bloodglucose-entry-form.html": {},
-                        "new-entry-data-page.html": {},
-                        "new-insulin-data-on-existing-entry.html": {},
-                        "new-insulin-entry.html": {},
-                        "plusbutton.html": {},
-                        "searchbutton.html": {},
-                        "setup-page.html": {},
-                        "view-long-term-bloodglucose.html": {},
-                        "user-bio.html": {}
-                    }
+                "files": {
+                    "index.html": {},
+                    "left-sidebar.html": {},
+                    "no-sidebar.html": {},
+                    "right-sidebar.html": {}
                 }
             }
         }
     },
     "execs": {
-        "compile-didi": {
-            "cmd": ["go", "build", "-o", "bin/didi", "github.com/geraldtivatyi/didiapp/src/didi/cmd/test"],
+        "compile-profile": {
+            "cmd": ["go", "build", "-o", "bin/", "github.com/geraldtivatyi/shalprin/src/cmd/test"],
             "timeout": 100000,
             "env": {"GOOS":"linux"}
         }

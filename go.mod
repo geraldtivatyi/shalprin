@@ -1,4 +1,4 @@
-module github.com/geraldtivatyi/didiapp
+module github.com/geraldtivatyi/shalprin
 
 go 1.14
 

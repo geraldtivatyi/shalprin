@@ -16,12 +16,12 @@ import (
 	"golang.org/x/crypto/acme/autocert"
 
 	//xxx
-	"github.com/geraldtivatyi/didiapp/didi/profile"
-	"github.com/geraldtivatyi/didiapp/didi/session"
+	"github.com/geraldtivatyi/shalprin/shalprin/profile"
+	"github.com/geraldtivatyi/shalprin/shalprin/session"
 	//end
 	//+++
-	//"github.com/geraldtivatyi/didiapp/src/didi/profile"
-	//"github.com/geraldtivatyi/didiapp/src/didi/session"
+	//"github.com/geraldtivatyi/shalprin/src/shalprin/profile"
+	//"github.com/geraldtivatyi/shalprin/src/shalprin/session"
 	//end
 )
 
