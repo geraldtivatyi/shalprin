@@ -144,60 +144,24 @@
                 },
                 "images": {
                     "files": {
-                        "AccountsButton.png": {
-                            "templates": ["static/images/AccountsButton.png"]
-                        },
-                        "bus.png": {
-                            "templates": ["static/images/bus.png"]
-                        },
-                        "LocationA.png": {
-                            "templates": ["static/images/LocationA.png"]
-                        },
-                        "lock.png": {
-                            "templates": ["static/images/lock.png"]
-                        },
-                        "minusbutton.png": {
-                            "templates": ["static/images/minusbutton.png"]
-                        },
-                        "pic01.png": {
-                            "templates": ["static/images/pic01.png"]
-                        },
-                        "pic02.png": {
-                            "templates": ["static/images/pic02.png"]
-                        },
-                        "pic03.png": {
-                            "templates": ["static/images/pic03.png"]
-                        },
-                        "pic04.png": {
-                            "templates": ["static/images/pic04.png"]
-                        },
-                        "pic05.png": {
-                            "templates": ["static/images/pic05.png"]
-                        },
-                        "pic06.png": {
-                            "templates": ["static/images/pic06.png"]
-                        },
-                        "pic07.png": {
-                            "templates": ["static/images/pic07.png"]
-                        },
-                        "plusbutton.png": {
-                            "templates": ["static/images/plusbutton.png"]
-                        },
-                        "ProjectButton.png": {
-                            "templates": ["static/images/ProjectButton.png"]
-                        },
-                        "SearchButton.png": {
-                            "templates": ["static/images/SearchButton.png"]
-                        },
-                        "SettingsButton.png": {
-                            "templates": ["static/images/SettingsButton.png"]
-                        },
-                        "SignUpButton.png": {
-                            "templates": ["static/images/SignUpButton.png"]
-                        },
-                        "star.png": {
-                            "templates": ["static/images/star.png"]
-                        }
+                        "AccountsButton.png": {},
+                        "bus.png": {},
+                        "LocationA.png": {},
+                        "lock.png": {},
+                        "minusbutton.png": {},
+                        "pic01.png": {},
+                        "pic02.png": {},
+                        "pic03.png": {},
+                        "pic04.png": {},
+                        "pic05.png": {},
+                        "pic06.png": {},
+                        "pic07.png": {},
+                        "plusbutton.png": {},
+                        "ProjectButton.png": {},
+                        "SearchButton.png": {},
+                        "SettingsButton.png": {},
+                        "SignUpButton.png": {},
+                        "star.png": {}
                     }
                 },
                 "files": {
@@ -211,7 +175,7 @@
     },
     "execs": {
         "compile-profile": {
-            "cmd": ["go", "build", "-o", "bin/", "github.com/geraldtivatyi/shalprin/src/cmd/test"],
+            "cmd": ["go", "build", "-o", "bin", "github.com/geraldtivatyi/shalprin/src/cmd/test"],
             "timeout": 100000,
             "env": {"GOOS":"linux"}
         }

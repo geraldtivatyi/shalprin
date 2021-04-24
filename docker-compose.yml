@@ -1,15 +1,19 @@
 version: '3.7' 
 
 services:
-  shalprin:
+  profile:
     build: .
-    working_dir: /opt/shalprin
+    working_dir: /opt/profile
     volumes: 
-      - "./bin/shalprin:/opt/shalprin/bin/shalprin"
-      - "./static:/opt/shalprin/static"
+      - "./bin/profile:/opt/profile/bin/profile"
+    environment:
+      - "DB_NAME=test"
+      - "DB_USER=test"
+      - "DB_PASSWORD=password"
+      - "DB_ADDRESS=shalprin-db"
     ports:
-      - 9000:9000
-    entrypoint: /opt/shalprin/bin/shalprin
+      - 9001:9000
+    entrypoint: /opt/profile/bin
     
   shalprin-db:
     image: mariadb

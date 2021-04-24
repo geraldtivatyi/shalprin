@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"net/http/httputil"
+	"net/url"
 	"os"
 	"os/signal"
 	"time"
@@ -12,19 +14,14 @@ import (
 	"github.com/oligoden/chassis/adapter"
 	"github.com/oligoden/chassis/storage/gosql"
 
-	//xxx
-	"github.com/geraldtivatyi/shalprin/shalprin/profile"
-	"github.com/geraldtivatyi/shalprin/shalprin/session"
+	//---
+	"github.com/geraldtivatyi/shalprin/work/gateway"
+	"github.com/geraldtivatyi/shalprin/work/gateway/session"
 	//end
 	//+++
-	//"github.com/geraldtivatyi/shalprin/src/shalprin/profile"
-	//"github.com/geraldtivatyi/shalprin/src/shalprin/session"
+	//"github.com/geraldtivatyi/shalprin/src/gateway"
+	//"github.com/geraldtivatyi/shalprin/src/gateway/session"
 	//end
-)
-
-const (
-	dbt = "mysql"
-	uri = "test:password@tcp(shalprin-db:3306)/test?charset=utf8&parseTime=True&loc=Local"
 )
 
 func serveFile(f string) http.Handler {
@@ -38,34 +35,46 @@ func serveFiles(p, d string) http.Handler {
 }
 
 func main() {
+	hIndex := gateway.NewIndex()
+	profile, _ := url.Parse("http://profile:9000/")
+	hIndex.SetProxy("profiles", httputil.NewSingleHostReverseProxy(profile))
+
+	dbUser := os.Getenv("DB_USER")
+	dbPass := os.Getenv("DB_PASSWORD")
+	dbAddr := os.Getenv("DB_ADDRESS")
+	dbPort := os.Getenv("DB_PORT")
+	dbName := os.Getenv("DB_NAME")
+	params := "charset=utf8&parseTime=True&loc=Local"
+	format := "%s:%s@tcp(%s:%s)/%s?%s"
+
+	if dbPort == "" {
+		dbPort = "3306"
+	}
+	uri := fmt.Sprintf(format, dbUser, dbPass, dbAddr, dbPort, dbName, params)
+	dbt := "mysql"
+
 	store := gosql.New(dbt, uri)
 	if store.Err() != nil {
-		log.Fatal(store.Err())
+		log.Fatal(fmt.Errorf("starting store, %w", store.Err()))
 	}
-
-	dProfile := profile.NewDevice(store)
-	store.Migrate(profile.NewRecord())
 
 	dSession := session.NewDevice(store)
 	store.Migrate(session.NewRecord())
 	store.Migrate(session.NewSessionUsersRecord())
 
-	mwProfileCore := adapter.MNA()
-	mwProfileMethodHandlers := mwProfileCore.Put(dProfile.Update()).Get(dProfile.Read()).Post(dSession.CreateUser())
-
 	mux := http.NewServeMux()
 	mux.Handle("/", adapter.Core(serveFile("static/html")).Notify().Entry())
 	mux.Handle("/static/", adapter.Core(serveFiles("/static/", "static")).Entry())
 
-	mwSignin := adapter.MNA().Post(dProfile.Read()).And(dSession.Signin())
-	mwSignup := adapter.MNA().Post(dProfile.Create()).And(dSession.CreateUser())
-	mwSignout := adapter.MNA().Delete(dSession.Signout())
+	mwProfile := adapter.Core(hIndex).And(dSession.CreateUser())
+	mux.Handle("/api/v1/profiles", mwProfile.And(dSession.Validate()).Notify().Entry())
 
-	mux.Handle("/signin", mwSignin.And(dSession.Authenticate()).Notify().Entry())
-	mux.Handle("/signup", mwSignup.And(dSession.Authenticate()).Notify().Entry())
-	mux.Handle("/signout", mwSignout.And(dSession.Authenticate()).Notify().Entry())
+	mwSession := adapter.MNA().Delete(dSession.Signout()).Post(dSession.Signin())
+	mux.Handle("/api/v1/sessions", mwSession.And(dSession.Validate()).Notify().Entry())
 
-	mux.Handle("/api/v1/profile", mwProfileMethodHandlers.And(dSession.Authenticate()).Notify().Entry())
+	mux.Handle("/api/v1/signin", mwSession.And(dSession.Validate()).Notify().Entry())
+
+	mux.Handle("/api/v1/", adapter.Core(hIndex).And(dSession.Validate()).Notify().Entry())
 
 	httpServer := &http.Server{
 		Addr:           ":9000",
@@ -105,17 +114,4 @@ func main() {
 	}
 
 	time.Sleep(100 * time.Millisecond)
-	// err := http.ListenAndServe(":8085", nil)
-	// if err != nil && err != http.ErrServerClosed {
-	// 	log.Fatal(err)
-	// }
 }
-
-// func shutdown(s *http.Server) {
-// 	ctxServer, cancel := context.WithTimeout(context.Background(), 10*time.Second)
-// 	defer cancel()
-// 	err := s.Shutdown(ctxServer)
-// 	if err != nil && err != http.ErrServerClosed {
-// 		fmt.Println("https server shutdown error", err)
-// 	}
-// }

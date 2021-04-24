@@ -1,3 +1,10 @@
 {
-    "testing": true
+    "testing": true,
+    "execs": {
+        "compile-profile": {
+            "cmd": ["go", "build", "-o", "bin", "github.com/geraldtivatyi/shalprin/src/cmd/test"],
+            "timeout": 100000,
+            "env": {"GOOS":"linux"}
+        }
+    }
 }
