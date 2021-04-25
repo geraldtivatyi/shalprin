@@ -22,7 +22,7 @@ services:
       {{- end }}
     ports:
       {{ if .Testing -}}
-      - 9001:9000
+      - 9000:9000
       {{- else -}}
       - 80:80
       - 443:443
@@ -42,7 +42,7 @@ services:
       - "DB_ADDRESS=shalprin-db"
     {{- end }}
     ports:
-      - 9002:9000
+      - 9001:9000
     entrypoint: /opt/profile/bin/profile
 
   {{ if .Testing -}}

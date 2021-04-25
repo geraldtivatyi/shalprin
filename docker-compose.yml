@@ -13,7 +13,7 @@ services:
       - "DB_PASSWORD=password"
       - "DB_ADDRESS=shalprin-db"
     ports:
-      - 9001:9000
+      - 9000:9000
     entrypoint: /opt/gateway/bin/gateway
 
   profile:
@@ -26,7 +26,7 @@ services:
       - "DB_PASSWORD=password"
       - "DB_ADDRESS=shalprin-db"
     ports:
-      - 9002:9000
+      - 9001:9000
     entrypoint: /opt/profile/bin/profile
 
   shalprin-db:
