@@ -62,9 +62,9 @@
             }
         },
         "static": {
-            "from": ".",
-            "dest": "static",
             "directories": {
+                "work-location": ".",
+                "dest-location": "static",
                 "assets": {
                     "directories": {
                         "css": {
