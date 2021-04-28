@@ -63,8 +63,6 @@
         },
         "static": {
             "directories": {
-                "work-location": ".",
-                "dest-location": "static",
                 "assets": {
                     "directories": {
                         "css": {
@@ -77,38 +75,28 @@
                                 }
                             },
                             "settings": "comment-filter",
-                            "files": {}
+                            "files": {
+                                "font-awesome.min.css": {},
+                                "ie8.css": {},
+                                "lib.css": {},
+                                "main.css": {}
+                            }
                         },
                         "fonts": {
-                            "settings": "comment-filter",
-                            "files": {}
-                        },
-                        "js": {
-                            "directories": {
-                                "ie": {
-                                    "settings": "comment-filter",
-                                    "files": {}
-                                }
-                            },
-                            "settings": "comment-filter",
-                            "files": {}
-                        },
-                        "sass": {
-                            "directories": {
-                                "libs": {
-                                    "settings": "comment-filter",
-                                    "files": {}
-                                }
-                            },
-                            "settings": "comment-filter",
-                            "files": {}
+                            "settings": "copy-only",
+                            "files": {
+                                "fontawesome-webfont.eot": {}
+                            }
                         }
+                    },
+                    "settings": "copy-only",
+                    "files": {
+                        "index.html": {},
+                        "left-sidebar.html": {},
+                        "no-sidebar.html": {},
+                        "right-sidebar.html": {}
                     }
-                },
-                "images": {
-                    "files": {}
-                },
-                "files": {}
+                }
             }
         }
     },
