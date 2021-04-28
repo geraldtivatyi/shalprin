@@ -85,18 +85,83 @@
                         "fonts": {
                             "settings": "copy-only",
                             "files": {
-                                "fontawesome-webfont.eot": {}
+                                "fontawesome-webfont.eot": {},
+                                "fontawesome-webfont.svg": {},
+                                "fontawesome-webfont.ttf": {},
+                                "fontawesome-webfont.woff": {},
+                                "fontawesome-webfont.woff2": {},
+                                "FontAwesome.otf": {}
+                            }
+                        },
+                        "js": {
+                            "directories": {
+                                "ie": {
+                                    "settings": "copy-only",
+                                    "files": {
+                                        "html5shiv.js": {},
+                                        "PIE.htc": {},
+                                        "respond.min.js": {}
+                                    }
+                                }
+                            },
+                            "settings": "copy-only",
+                            "files": {
+                                "jquery.dropotron.min.js": {},
+                                "jquery.min.js": {},
+                                "main.js": {},
+                                "skel.min.js": {},
+                                "util.js": {}
+                            }
+                        },
+                        "sass": {
+                            "directories": {
+                                "libs": {
+                                    "settings": "copy-only",
+                                    "files": {
+                                        "_functions.scss": {},
+                                        "_mixins.scss": {},
+                                        "_skei.scss": {},
+                                        "_vars.scss": {}
+                                    }
+                                }
+                            },
+                            "settings": "copy-only",
+                            "files": {
+                                "ie8.scss": {},
+                                "main.scss": {}
                             }
                         }
-                    },
-                    "settings": "copy-only",
+                    }
+                },
+                "images": {
                     "files": {
-                        "index.html": {},
-                        "left-sidebar.html": {},
-                        "no-sidebar.html": {},
-                        "right-sidebar.html": {}
+                        "AccountsButton.png": {},
+                        "bus.png": {},
+                        "LocationA.png": {},
+                        "lock.png": {},
+                        "minusbutton.png": {},
+                        "pic01.png": {},
+                        "pic02.png": {},
+                        "pic03.png": {},
+                        "pic04.png": {},
+                        "pic05.png": {},
+                        "pic06.png": {},
+                        "pic07.png": {},
+                        "plusbutton.png": {},
+                        "ProjectButton.png": {},
+                        "SearchButton.png": {},
+                        "SettingsButton.png": {},
+                        "SignUpButton.png": {},
+                        "star.png": {}
                     }
                 }
+            },
+            "settings": "copy-only",
+            "files": {
+                "index.html": {},
+                "left-sidebar.html": {},
+                "no-sidebar.html": {},
+                "right-sidebar.html": {}
             }
         }
     },
