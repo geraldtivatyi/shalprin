@@ -36,6 +36,10 @@
                         "record.go": {}
                     }
                 }
+            },
+            "settings": "comment-filter",
+            "files": {
+                "index.go": {}
             }
         },
         "profile": {
