@@ -11,12 +11,7 @@ import (
 	"github.com/oligoden/chassis/device/model/data"
 	"github.com/oligoden/chassis/storage/gosql"
 
-	//---
-	"github.com/geraldtivatyi/shalprin/work/profile"
-	//end
-	//+++
-	// "github.com/geraldtivatyi/shalprin/src/profile"
-	//end
+	 "github.com/geraldtivatyi/shalprin/src/profile"
 )
 
 type Model struct {

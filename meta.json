@@ -62,8 +62,54 @@
             }
         },
         "static": {
-            "work-location": ".",
-            "dest-location": "static"
+            "from": ".",
+            "dest": "static",
+            "directories": {
+                "assets": {
+                    "directories": {
+                        "css": {
+                            "directories": {
+                                "images": {
+                                    "settings": "copy-only",
+                                    "files": {
+                                        "bg01.png": {}
+                                    }
+                                }
+                            },
+                            "settings": "comment-filter",
+                            "files": {}
+                        },
+                        "fonts": {
+                            "settings": "comment-filter",
+                            "files": {}
+                        },
+                        "js": {
+                            "directories": {
+                                "ie": {
+                                    "settings": "comment-filter",
+                                    "files": {}
+                                }
+                            },
+                            "settings": "comment-filter",
+                            "files": {}
+                        },
+                        "sass": {
+                            "directories": {
+                                "libs": {
+                                    "settings": "comment-filter",
+                                    "files": {}
+                                }
+                            },
+                            "settings": "comment-filter",
+                            "files": {}
+                        }
+                    }
+                },
+                "images": {
+                    "files": {}
+                },
+                "files": {}
+            }
         }
     },
     "execs": {

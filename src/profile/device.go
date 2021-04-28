@@ -1,4 +1,4 @@
-package session
+package profile
 
 import (
 	"net/http"
@@ -14,7 +14,7 @@ type Device struct {
 
 func NewDevice(s model.Connector) *Device {
 	d := &Device{}
-	nm := func(r *http.Request) model.Operator { return NewModel(r, d.Store) }
+	nm := func(r *http.Request) model.Operator { return NewModel(r, s) }
 	nv := func(w http.ResponseWriter) view.Operator { return NewView(w) }
 	d.Default = device.NewDevice(nm, nv, s)
 	return d
