@@ -14,8 +14,14 @@ import (
 	"github.com/oligoden/chassis/adapter"
 	"github.com/oligoden/chassis/storage/gosql"
 
-	"github.com/geraldtivatyi/shalprin/src/gateway"
-	"github.com/geraldtivatyi/shalprin/src/gateway/session"
+	//---
+	"github.com/geraldtivatyi/shalprin/work/gateway"
+	"github.com/geraldtivatyi/shalprin/work/gateway/session"
+	//end
+	//+++
+	//"github.com/geraldtivatyi/shalprin/src/gateway"
+	//"github.com/geraldtivatyi/shalprin/src/gateway/session"
+	//end
 )
 
 func serveFile(f string) http.Handler {

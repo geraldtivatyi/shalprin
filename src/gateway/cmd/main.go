@@ -18,7 +18,12 @@ import (
 	"github.com/oligoden/chassis/adapter"
 	"github.com/oligoden/chassis/storage/gosql"
 
-	"github.com/geraldtivatyi/shalprin/src/gateway"
+	//xxx
+	"github.com/geraldtivatyi/shalprin/work/gateway"
+	//end
+	//+++
+	//"github.com/geraldtivatyi/shalprin/src/gateway"
+	//end
 )
 
 func serveFile(f string) http.Handler {
@@ -56,7 +61,7 @@ func main() {
 	}
 
 	mux := http.NewServeMux()
-	mux.Handle("/", adapter.Core(serveFile("static")).Notify().Entry())
+	mux.Handle("/", adapter.Core(serveFile("static/")).Notify().Entry())
 	mux.Handle("/static/", adapter.Core(serveFiles("/static/", "static")).Entry())
 
 	mux.Handle("/api/v1/", adapter.Core(hIndex).Notify().Entry())

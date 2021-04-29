@@ -1,3 +1,7 @@
+@import 'libs/vars';
+@import 'libs/functions';
+@import 'libs/mixins';
+
 /*
 	Verti by Pixelarity
 	pixelarity.com | hello@pixelarity.com
@@ -12,9 +16,11 @@
 
 /* Image */
 
-	.image img {
-		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+	.image {
+		img {
+			position: relative;
+			-ms-behavior: url('assets/js/ie/PIE.htc');
+		}
 	}
 
 /* Button */
@@ -25,7 +31,7 @@
 	.button,
 	button {
 		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+		-ms-behavior: url('assets/js/ie/PIE.htc');
 	}
 
 /* Widgets */
@@ -33,33 +39,39 @@
 	.box,
 	.widget.contact ul li a {
 		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+		-ms-behavior: url('assets/js/ie/PIE.htc');
 	}
 
 /* Header */
 
 	#logo h1 {
 		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+		-ms-behavior: url('assets/js/ie/PIE.htc');
 	}
 
 /* Nav */
 
-	#nav ul li a, #nav ul li span {
-		position: relative;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
+	#nav {
+		ul {
+			li {
+				a, span {
+					position: relative;
+					-ms-behavior: url('assets/js/ie/PIE.htc');
+				}
+			}
+		}
 	}
 
 	.dropotron {
 		border: solid 1px #eee;
 		box-shadow: none !important;
-		-ms-behavior: url("assets/js/ie/PIE.htc");
-	}
+		-ms-behavior: url('assets/js/ie/PIE.htc');
 
-		.dropotron.level-0 {
+		&.level-0 {
 			box-shadow: none !important;
-		}
 
-			.dropotron.level-0:before {
+			&:before {
 				display: none;
 			}
+		}
+	}
