@@ -154,6 +154,11 @@
                         "SignUpButton.png": {},
                         "star.png": {}
                     }
+                },
+                "html": {
+                    "files": {
+                        "index.html": {}
+                    }
                 }
             },
             "settings": "copy-only",

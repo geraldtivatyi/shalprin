@@ -38,7 +38,7 @@ func serveFiles(p, d string) http.Handler {
 
 func main() {
 	hIndex := gateway.NewIndex()
-	profile, _ := url.Parse("http://profile:8080/")
+	profile, _ := url.Parse("http://profile:9000/")
 	hIndex.SetProxy("profile", httputil.NewSingleHostReverseProxy(profile))
 
 	dbUser := os.Getenv("DB_USER")
@@ -61,7 +61,7 @@ func main() {
 	}
 
 	mux := http.NewServeMux()
-	mux.Handle("/", adapter.Core(serveFile("static/")).Notify().Entry())
+	mux.Handle("/", adapter.Core(serveFile("static")).Notify().Entry())
 	mux.Handle("/static/", adapter.Core(serveFiles("/static/", "static")).Entry())
 
 	mux.Handle("/api/v1/", adapter.Core(hIndex).Notify().Entry())
