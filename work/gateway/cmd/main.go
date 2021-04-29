@@ -61,7 +61,7 @@ func main() {
 	}
 
 	mux := http.NewServeMux()
-	mux.Handle("/", adapter.Core(serveFile("static/html")).Notify().Entry())
+	mux.Handle("/", adapter.Core(serveFile("static")).Notify().Entry())
 	mux.Handle("/static/", adapter.Core(serveFiles("/static/", "static")).Entry())
 
 	mux.Handle("/api/v1/", adapter.Core(hIndex).Notify().Entry())

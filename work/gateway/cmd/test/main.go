@@ -63,7 +63,7 @@ func main() {
 	store.Migrate(session.NewSessionUsersRecord())
 
 	mux := http.NewServeMux()
-	mux.Handle("/", adapter.Core(serveFile("static/html")).Notify().Entry())
+	mux.Handle("/", adapter.Core(serveFile("static")).Notify().Entry())
 	mux.Handle("/static/", adapter.Core(serveFiles("/static/", "static")).Entry())
 
 	mwProfile := adapter.Core(hIndex).And(dSession.CreateUser())
