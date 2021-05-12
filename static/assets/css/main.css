@@ -1346,6 +1346,11 @@
 		color: #696969;
 		font-weight: 300;
 		line-height: 2.25em;
+		width: 100%;
+		border-radius: 0.45em;
+    	border-style: solid;
+		padding: 0.25em;
+		margin: 0.25em;
 	}
 
 	a {

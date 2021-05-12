@@ -76,6 +76,8 @@ func main() {
 
 	mux.Handle("/api/v1/", adapter.Core(hIndex).And(dSession.Validate()).Notify().Entry())
 
+	// ReadConfig()
+
 	httpServer := &http.Server{
 		Addr:           ":9000",
 		Handler:        mux,
@@ -115,3 +117,14 @@ func main() {
 
 	time.Sleep(100 * time.Millisecond)
 }
+
+// func ReadConfig() {
+// 	fmt.Println("reading config...")
+// 	config, e := ioutil.ReadFile("/configs/config.json")
+// 	if e != nil {
+// 		fmt.Printf("Error reading config file: %v\n", e)
+// 		os.Exit(1)
+// 	}
+// 	configuration = config
+// 	fmt.Println("config loaded")
+// }

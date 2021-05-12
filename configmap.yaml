@@ -1,0 +1,10 @@
+apiVersion: V1
+kind: ConfigMap
+metadata:
+  name: example-config
+data:
+  config.json:
+    {
+      "environment" : "dev" 
+    }
+# kubectl create configmap example-config --from-file .shalprin/configs/config.json

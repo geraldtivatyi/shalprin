@@ -50,6 +50,8 @@
                 "device.go": {},
                 "model.go": {},
                 "record.go": {},
+                "search.go": {},
+                "server.pb.go": {},
                 "view.go": {}
             },
             "directories": {
@@ -161,6 +163,9 @@
                 "index.html": {},
                 "left-sidebar.html": {},
                 "no-sidebar.html": {},
+                "signin.html": {},
+                "signin_signup.html": {},
+                "signup.html": {},
                 "right-sidebar.html": {}
             }
         }

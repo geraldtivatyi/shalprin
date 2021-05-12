@@ -9,9 +9,11 @@ import (
 )
 
 type Record struct {
-	Firstname string `form:"firstname" json:"firstname"`
-	Lastname  string `form:"lastname" json:"lastname"`
-	Email     string `form:"email" json:"email"`
+	Firstname string `json:"firstname" form:"firstname"`
+	Lastname  string `json:"lastname" form:"lastname"`
+	Email     string `json:"email" form:"email"`
+	Mobile    string `json:"mobile" form:"mobile"`
+	Address   string `json:"address" form:"address"`
 	data.Default
 }
 
@@ -38,15 +40,15 @@ func (e Record) Prepare() error {
 		return fmt.Errorf("bad request, email not valid")
 	}
 
-	// match, _ = regexp.MatchString("^\\+?[0-9 ]{10,14}$", e.Mobile)
-	// if !match {
-	// 	return fmt.Errorf("bad request, mobile not valid")
-	// }
+	match, _ = regexp.MatchString("^\\+?[0-9 ]{10,14}$", e.Mobile)
+	if !match {
+		return fmt.Errorf("bad request, mobile not valid")
+	}
 
-	// match, _ = regexp.MatchString("^[a-zA-Z0-9- ]{10,}$", e.Address)
-	// if !match {
-	// 	return fmt.Errorf("bad request, address not valid")
-	// }
+	match, _ = regexp.MatchString("^[a-zA-Z0-9,.' -]{10,}$", e.Address)
+	if !match {
+		return fmt.Errorf("bad request, address not valid")
+	}
 
 	// match, _ = regexp.MatchString("^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$", e.Password)
 	// if !match {
@@ -61,7 +63,7 @@ func (Record) TableName() string {
 }
 
 func (Record) Migrate(db *sql.DB) error {
-	q := "CREATE TABLE `profiles` ( `firstname` varchar(255) DEFAULT NULL, `lastname` varchar(255) DEFAULT NULL, `email` varchar(255) DEFAULT NULL, `id` int(10) unsigned NOT NULL AUTO_INCREMENT, `uc` varchar(255) DEFAULT NULL, `owner_id` int(10) unsigned DEFAULT NULL, `perms` varchar(255) DEFAULT NULL, `hash` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `uc` (`uc`) )"
+	q := "CREATE TABLE `profiles` (`firstname` varchar(255) DEFAULT NULL, `lastname` varchar(255) DEFAULT NULL, `email` varchar(255) DEFAULT NULL, `mobile` varchar(255) DEFAULT NULL, `address` varchar(255) DEFAULT NULL, `id` int(10) unsigned NOT NULL AUTO_INCREMENT, `uc` varchar(255) DEFAULT NULL, `owner_id` int(10) unsigned DEFAULT NULL, `perms` varchar(255) DEFAULT NULL, `hash` varchar(255) DEFAULT NULL, PRIMARY KEY (`id`), UNIQUE KEY `uc` (`uc`) )"
 
 	_, err := db.Exec(q)
 	if err != nil {

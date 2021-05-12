@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"log"
+	"net"
 	"net/http"
 	"os"
 	"os/signal"
@@ -11,6 +12,7 @@ import (
 
 	"github.com/oligoden/chassis/adapter"
 	"github.com/oligoden/chassis/storage/gosql"
+	"google.golang.org/grpc"
 
 	//xxx
 	"github.com/geraldtivatyi/shalprin/work/profile"
@@ -20,12 +22,21 @@ import (
 	//end
 )
 
-const (
-	dbt = "mysql"
-	uri = "test:password@tcp(shalprin-db:3306)/test?charset=utf8&parseTime=True&loc=Local"
-)
-
 func main() {
+	dbUser := os.Getenv("DB_USER")
+	dbPass := os.Getenv("DB_PASSWORD")
+	dbAddr := os.Getenv("DB_ADDRESS")
+	dbPort := os.Getenv("DB_PORT")
+	dbName := os.Getenv("DB_NAME")
+	params := "charset=utf8&parseTime=True&loc=Local"
+	format := "%s:%s@tcp(%s:%s)/%s?%s"
+
+	if dbPort == "" {
+		dbPort = "3306"
+	}
+	uri := fmt.Sprintf(format, dbUser, dbPass, dbAddr, dbPort, dbName, params)
+	dbt := "mysql"
+
 	store := gosql.New(dbt, uri)
 	if store.Err() != nil {
 		log.Fatal(store.Err())
@@ -49,6 +60,23 @@ func main() {
 		MaxHeaderBytes: 1 << 20,
 	}
 
+	//protoc -I . server.proto --go_out=plugins=grpc:.
+	//go install github.com/golang/protobuf/protoc-gen-go
+
+	grpcServerError := make(chan error)
+	grpcServer := grpc.NewServer()
+	go func() {
+		lis, err := net.Listen("tcp", fmt.Sprintf(":%d", 9001))
+		if err != nil {
+			log.Fatalf("failed to listen: %v", err)
+		}
+
+		profile.RegisterReadProfileServer(grpcServer, dProfile)
+		if err := grpcServer.Serve(lis); err != nil {
+			log.Fatalf("failed to serve: %s", err)
+		}
+	}()
+
 	httpServerError := make(chan error)
 	go func() {
 		err := httpServer.ListenAndServe()
@@ -62,6 +90,24 @@ func main() {
 	quit := make(chan os.Signal)
 	signal.Notify(quit, os.Interrupt)
 
+	select {
+	case err := <-grpcServerError:
+		fmt.Println("grpc server error", err)
+		shutdown(httpServer)
+		time.Sleep(100 * time.Millisecond)
+		os.Exit(1)
+	case err := <-httpServerError:
+		fmt.Println("http server error", err)
+		grpcServer.GracefulStop()
+		time.Sleep(100 * time.Millisecond)
+		os.Exit(1)
+	case sig := <-quit:
+		fmt.Println("\ngot signal", sig)
+	}
+
+	grpcServer.GracefulStop()
+	shutdown(httpServer)
+	time.Sleep(100 * time.Millisecond)
 }
 
 func shutdown(s *http.Server) {

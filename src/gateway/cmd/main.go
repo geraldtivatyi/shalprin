@@ -103,6 +103,8 @@ func main() {
 		// },
 	}
 
+	// ReadConfig()
+
 	httpsServer := &http.Server{
 		Addr:           ":443",
 		Handler:        mux,
@@ -147,3 +149,14 @@ func shutdown(s *http.Server) {
 		fmt.Println("https server shutdown error", err)
 	}
 }
+
+// func ReadConfig() {
+// 	fmt.Println("reading config...")
+// 	config, e := ioutil.ReadFile("/configs/config.json")
+// 	if e != nil {
+// 		fmt.Printf("Error reading config file: %v\n", e)
+// 		os.Exit(1)
+// 	}
+// 	configuration = config
+// 	fmt.Println("config loaded")
+// }

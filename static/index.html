@@ -23,30 +23,30 @@
 						<!-- Nav -->
 							<nav id="nav">
 								<ul>
-									<li><a href="index.html">Welcome</a></li>
 									<li class="current">
 										<a href="#">Book a Service</a>
 										<ul>
 											<li><a href="#">Cleaners</a></li>
 											<li><a href="#">Gardening</a></li>
 											<li><a href="#">Plumbing</a></li>
-											<li>
+											<!-- <li>
 												<a href="#">Fixing and Maintenance</a>
 												<ul>
 													<li><a href="#">Painting</a></li>
 													<li><a href="#">Plumbing</a></li>
 													<li><a href="#">Electrician</a></li>
 												</ul>
-											</li>
-											<li><a href="#">Heavy Lifing</a></li>
+											</li> -->
+											<!-- <li><a href="#">Heavy Lifing</a></li> -->
 										</ul>
 									</li>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
+									<li><a href="/static/left-sidebar.html">Left Sidebar</a></li>
+									<li><a href="/static/right-sidebar.html">Right Sidebar</a></li>
+									<li><a href="/static/no-sidebar.html">No Sidebar</a></li>
+									<li><a href="/static/signin_signup.html">Sign In / Sign Up</a></li>
 								</ul>
 							</nav>
-
+							
 					</header>
 				</div>
 
@@ -55,8 +55,14 @@
 					<div id="banner" class="box container">
 						<div class="row">
 							<div class="7u 12u(medium)">
-								<h2>Our Passion...</h2>
-								<p>Cras sed quam adipiscing arcu accumsan ut Vestibulum</p>
+								<h2>Book a Service...</h2>
+								<!-- <input type="text" placeholder="What service are you looking for?" /> -->
+								<select name="selection" id="selection">
+									<option>What service are you looking for?</option>
+									<option value="cleaners">Cleaners</option>
+									<option value="gardeners">Gardeners</option>
+									<option value="plumbers">Plumbers</option>
+								  </select>
 							</div>
 							<div class="5u 12u(medium)">
 								<ul>
@@ -72,45 +78,56 @@
 				<div id="features-wrapper">
 					<div class="container">
 						<div class="row">
-							<div class="4u 12u(medium)">
+							<div class="3u 12u(medium)">
 
 								<!-- Box -->
 									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="/static/images/pic01.jpg" alt="" /></a>
 										<div class="inner">
 											<header>
-												<h2>Cep consequat urna</h2>
-												<p>Augue ante at nisl mus magna</p>
+												<h2>Home Cleaning</h2>
 											</header>
 											<p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet bibendum tristique fringilla.</p>
 										</div>
 									</section>
 
 							</div>
-							<div class="4u 12u(medium)">
+							<div class="3u 12u(medium)">
 
 								<!-- Box -->
 									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="/static/images/pic02.jpg" alt="" /></a>
 										<div class="inner">
 											<header>
-												<h2>At condimentum neque</h2>
-												<p>Diam at quam ut condimentum eleifend</p>
+												<h2>Gardening</h2>
 											</header>
 											<p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet bibendum tristique fringilla.</p>
 										</div>
 									</section>
 
 							</div>
-							<div class="4u 12u(medium)">
+							<div class="3u 12u(medium)">
 
 								<!-- Box -->
 									<section class="box feature">
-										<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+										<a href="#" class="image featured"><img src="/static/images/pic03.jpg" alt="" /></a>
 										<div class="inner">
 											<header>
-												<h2>Sit, non blandit est.</h2>
-												<p>Sociis cubilia adipiscing interdum</p>
+												<h2>Plumbing</h2>
+											</header>
+											<p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet bibendum tristique fringilla.</p>
+										</div>
+									</section>
+
+							</div>
+							<div class="3u 12u(medium)">
+
+								<!-- Box -->
+									<section class="box feature">
+										<a href="#" class="image featured"><img src="/static/images/pic03.jpg" alt="" /></a>
+										<div class="inner">
+											<header>
+												<h2>Plumbing</h2>
 											</header>
 											<p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet bibendum tristique fringilla.</p>
 										</div>
@@ -130,32 +147,29 @@
 								<!-- Sidebar -->
 									<div id="sidebar">
 										<section class="widget thumbnails">
-											<h3>Condimentum augue</h3>
+											<h3>Our Pricing</h3>
 											<div class="grid">
 												<div class="row 50%">
-													<div class="6u"><a href="#" class="image fit"><img src="images/pic04.jpg" alt="" /></a></div>
-													<div class="6u"><a href="#" class="image fit"><img src="images/pic05.jpg" alt="" /></a></div>
-													<div class="6u"><a href="#" class="image fit"><img src="images/pic06.jpg" alt="" /></a></div>
-													<div class="6u"><a href="#" class="image fit"><img src="images/pic07.jpg" alt="" /></a></div>
+													<div class="6u"><a href="#" class="image fit"><img src="/static/images/pic04.jpg" alt="" /></a></div>
 												</div>
 											</div>
 											<a href="#" class="button icon fa-file-text-o">More</a>
 										</section>
 									</div>
-
-							</div>
-							<div class="8u 12u(medium) important(medium)">
-
-								<!-- Content -->
+									
+								</div>
+								<div class="8u 12u(medium) important(medium)">
+ 
+									<!-- Content -->
 									<div id="content">
 										<section class="last">
-											<h2>Mi congue erat mus nullam?</h2>
+											<h2>Our Vision and Values</h2>
+											<h3>Vision</h3>
 											<p>Orci ut Aenean, sed quis col dolor adipiscing porta erat interdum at Pellentesque eu accumsan justo sem Eleifend Aliquam Scelerisque suscipit, ut eget enim et cep ut mus sit lobortis mi adipiscing aliquet vel massa diam augue at lorem felis ornare in cursus ac nec non suscipit</p>
+											<h3>Values</h3>
 											<p>Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper bibendum ipsum, et tristique augue fringilla eu. Vivamus id risus vel dolor auctor euismod quis eget mi. Etiam eu ante risus. Aliquam erat volutpat. Aliquam luctus mattis lectus sit amet phasellus quam turpis.</p>
-											<a href="#" class="button icon fa-arrow-circle-right">Continue Reading</a>
 										</section>
 									</div>
-
 							</div>
 						</div>
 					</div>
@@ -214,17 +228,16 @@
 
 								<!-- Contact -->
 									<section class="widget contact last">
-										<h3>Aliquet Id</h3>
+										<h3>Social Media</h3>
 										<ul>
 											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
 											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
 											<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
 										</ul>
-										<p>1234 Fictional Road<br />
-										Nashville, TN 00000<br />
-										(800) 555-0000</p>
+										<p>13,  Bindu Street Zengeza 1,  Kurima House SCO,  Mashonaland East  <br />
+											Chitungwiza, Zimbabwe 00000<br />
+										+263 78 510 0628</p>
 									</section>
 
 							</div>
@@ -233,7 +246,7 @@
 							<div class="12u">
 								<div id="copyright">
 									<ul class="menu">
-										<li>&copy; Untitled. All rights reserved</li>
+										<li>&copy; Shalprin Enterprise. All rights reserved</li>
 									</ul>
 								</div>
 							</div>
