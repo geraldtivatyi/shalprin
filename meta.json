@@ -46,6 +46,46 @@
                         "record.go": {},
                         "view.go": {}
                     }
+                },
+                "cleaning": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "list.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "gardening": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "list.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "electrician": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "list.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
+                },
+                "plumbing": {
+                    "files": {
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "list.go": {},
+                        "record.go": {},
+                        "view.go": {}
+                    }
                 }
             }
         },
