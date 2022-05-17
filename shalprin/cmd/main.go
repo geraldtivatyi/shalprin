@@ -16,12 +16,20 @@ import (
 	"golang.org/x/crypto/acme/autocert"
 
 	//---
+	"github.com/geraldtivatyi/shalprin/shalprin/cleaning"
+	"github.com/geraldtivatyi/shalprin/shalprin/electrician"
+	"github.com/geraldtivatyi/shalprin/shalprin/gardening"
+	"github.com/geraldtivatyi/shalprin/shalprin/plumbing"
 	"github.com/geraldtivatyi/shalprin/work/shalprin/profile"
 	"github.com/geraldtivatyi/shalprin/work/shalprin/session"
 	//end
 	//+++
 	//"github.com/geraldtivatyi/shalprin/work/shalprin/profile"
 	//"github.com/geraldtivatyi/shalprin/work/shalprin/session"
+	//"github.com/geraldtivatyi/shalprin/work/shalprin/cleaning"
+	//"github.com/geraldtivatyi/shalprin/work/shalprin/gardening"
+	//"github.com/geraldtivatyi/shalprin/work/shalprin/electrician"
+	//"github.com/geraldtivatyi/shalprin/work/shalprin/plumbing"
 	//end
 )
 
@@ -43,8 +51,32 @@ func main() {
 	store.Migrate(session.NewRecord())
 	store.Migrate(session.NewSessionUsersRecord())
 
+	dCleaningServices := cleaning.NewDevice(store)
+	store.Migrate(cleaning.NewRecord())
+
+	dGardeningServices := gardening.NewDevice(store)
+	store.Migrate(gardening.NewRecord())
+
+	dElectricianServices := electrician.NewDevice(store)
+	store.Migrate(electrician.NewRecord())
+
+	dPlumbingServices := plumbing.NewDevice(store)
+	store.Migrate(plumbing.NewRecord())
+
 	mwProfileCore := adapter.MNA()
 	mwProfileMethodHandlers := mwProfileCore.Put(dProfile.Update()).Get(dProfile.Read()).Post(dSession.CreateUser())
+
+	mwCleaningServicesCore := adapter.MNA()
+	mwCleaningServicesMethodHandlers := mwCleaningServicesCore.Put(dCleaningServices.Update()).Get(dCleaningServices.List()).Post(dCleaningServices.Create())
+
+	mwGardeningServicesCore := adapter.MNA()
+	mwGardeningServicesMethodHandlers := mwGardeningServicesCore.Put(dGardeningServices.Update()).Get(dGardeningServices.List()).Post(dCleaningServices.Create())
+
+	mwElectricianServicesCore := adapter.MNA()
+	mwElectricianServicesMethodHandlers := mwElectricianServicesCore.Put(dElectricianServices.Update()).Get(dElectricianServices.List()).Post(dCleaningServices.Create())
+
+	mwPlumbingServicesCore := adapter.MNA()
+	mwPlumbingServicesMethodHandlers := mwPlumbingServicesCore.Put(dPlumbingServices.Update()).Get(dPlumbingServices.List()).Post(dCleaningServices.Create())
 
 	mux := http.NewServeMux()
 	mux.Handle("/", adapter.Core(serveFile("static/")).Notify().Entry())
@@ -57,6 +89,11 @@ func main() {
 	mux.Handle("/signin", mwSignin.And(dSession.Authenticate()).Notify().Entry())
 	mux.Handle("/signup", mwSignup.And(dSession.Authenticate()).Notify().Entry())
 	mux.Handle("/signout", mwSignout.And(dSession.Authenticate()).Notify().Entry())
+
+	mux.Handle("/api/v1/cleaning", mwCleaningServicesMethodHandlers.And(dSession.Authenticate()).Notify().Entry())
+	mux.Handle("/api/v1/gardening", mwGardeningServicesMethodHandlers.And(dSession.Authenticate()).Notify().Entry())
+	mux.Handle("/api/v1/electrician", mwElectricianServicesMethodHandlers.And(dSession.Authenticate()).Notify().Entry())
+	mux.Handle("/api/v1/plumbing", mwPlumbingServicesMethodHandlers.And(dSession.Authenticate()).Notify().Entry())
 
 	mux.Handle("/api/v1/profile", mwProfileMethodHandlers.And(dSession.Authenticate()).Notify().Entry())
 	mux.Handle("/api/v1/profile/", mwProfileMethodHandlers.And(dSession.Authenticate()).Notify().Entry())

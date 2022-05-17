@@ -1,5 +1,6 @@
 /bin
 /pkg
+/work/
 /src/github.com
 /node_modules
 .package-lock.json
