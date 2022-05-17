@@ -58,14 +58,6 @@
                 "assets": {
                     "directories": {
                         "css": {
-                            "directories": {
-                                "images": {
-                                    "settings": "copy-only",
-                                    "files": {
-                                        "bg01.png": {}
-                                    }
-                                }
-                            },
                             "files": {
                                 "font-awesome.min.css": {},
                                 "ie8.css": {},
