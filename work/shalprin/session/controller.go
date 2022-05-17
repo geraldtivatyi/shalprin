@@ -4,7 +4,7 @@ import (
 	"net/http"
 )
 
-func (d Device) Validate() http.Handler {
+func (d Device) Authenticate() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		m := NewModel(r, d.Store)
 		m.Bind()
@@ -30,13 +30,13 @@ func (d Device) Signin() http.Handler {
 
 		v := NewView(w)
 		v.SetUser(m)
-		v.JSON(m)
 	})
 }
 
 func (d Device) Signout() http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		m := NewModel(r, d.Store)
+		m.BindUser()
 		m.Signout()
 
 		v := NewView(w)

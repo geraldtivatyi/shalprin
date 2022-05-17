@@ -13,8 +13,8 @@ import (
 	"github.com/oligoden/chassis/storage/gosql"
 
 	//---
-	"github.com/geraldtivatyi/shalprin/work/profile"
-	"github.com/geraldtivatyi/shalprin/work/session"
+	"github.com/geraldtivatyi/shalprin/work/shalprin/profile"
+	"github.com/geraldtivatyi/shalprin/work/shalprin/session"
 	//end
 	//+++
 	//"github.com/geraldtivatyi/shalprin/work/shalprin/profile"

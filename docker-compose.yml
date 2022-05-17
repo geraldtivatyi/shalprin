@@ -1,12 +1,12 @@
 version: '3.7' 
 
 services:
-  gateway:
+  shalprin:
     build: .
-    working_dir: /opt/gateway
+    working_dir: /opt/shalprin
     volumes: 
-      - "./bin/gateway:/opt/gateway/bin/gateway"
-      - "./static:/opt/gateway/static"
+      - "./bin/gateway:/opt/shalprin/bin/shalprin"
+      - "./static:/opt/shalprin/static"
     environment:
       - "DB_NAME=test"
       - "DB_USER=test"
@@ -14,20 +14,7 @@ services:
       - "DB_ADDRESS=shalprin-db"
     ports:
       - 9000:9000
-    entrypoint: /opt/gateway/bin/gateway
-
-  profile:
-    build: .
-    volumes: 
-      - "./bin/profile:/opt/profile/bin/profile"
-    environment:
-      - "DB_NAME=test"
-      - "DB_USER=test"
-      - "DB_PASSWORD=password"
-      - "DB_ADDRESS=shalprin-db"
-    ports:
-      - 9001:9000
-    entrypoint: /opt/profile/bin/profile
+    entrypoint: /opt/shalprin/bin/shalprin
 
   shalprin-db:
     image: mariadb
