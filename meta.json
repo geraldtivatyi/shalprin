@@ -1,33 +1,35 @@
 {
     "name":"shalprin",
-    "testing": false,
-    "directories": {
-        "global": {
-            "from": ".",
-            "dest": ".",
-            "files": {
-                "docker-compose.yml.tmpl": {}
-            }
+    "work-location": ".",
+    "dest-location": ".",
+    "controls": {
+        "behaviour": {
+            "filters":{"comment-filter":{}}
         },
-        "gateway": {
-            "dest": "/src/gateway",
+        "mappings": [
+            {"start": "file:*go", "end": "exec:"}
+        ]
+    },
+    "directories": {
+        "shalprin": {
+            "controls":{"behaviour": {"options":"output"}},
+            "dst-ovr": "/work/shalprin",
             "directories": {
                 "cmd": {
+                    "controls":{"behaviour": {"filters":{"comment":{}}}},
                     "directories": {
                         "test": {
-                            "settings": "copy-only",
+                            "controls":{"behaviour": {"filters":{"comment":{}}}},
                             "files": {
                                 "main.go": {}
                             }
                         }
                     },
-                    "settings": "copy-only",
                     "files": {
                         "main.go": {}
                     }
                 },
                 "session": {
-                    "settings": "copy-only",
                     "files": {
                         "device.go": {},
                         "controller.go": {},
@@ -35,35 +37,23 @@
                         "view.go": {},
                         "record.go": {}
                     }
-                }
-            },
-            "settings": "copy-only",
-            "files": {
-                "index.go": {}
-            }
-        },
-        "profile": {
-            "dest": "/src/profile",
-            "settings": "copy-only",
-            "files": {
-                "controller.go": {},
-                "device.go": {},
-                "model.go": {},
-                "record.go": {},
-                "search.go": {},
-                "server.pb.go": {},
-                "view.go": {}
-            },
-            "directories": {
-                "cmd": {
-                    "settings": "copy-only",
+                },
+                "profile": {
                     "files": {
-                        "main.go": {}
+                        "controller.go": {},
+                        "device.go": {},
+                        "model.go": {},
+                        "record.go": {},
+                        "view.go": {}
                     }
                 }
             }
         },
         "static": {
+            "dst-ovr": "/work/static",
+            "controls": {
+                "behaviour":{"options":"output"}
+            },
             "directories": {
                 "assets": {
                     "directories": {
@@ -76,7 +66,6 @@
                                     }
                                 }
                             },
-                            "settings": "copy-only",
                             "files": {
                                 "font-awesome.min.css": {},
                                 "ie8.css": {},
@@ -86,7 +75,6 @@
                             }
                         },
                         "fonts": {
-                            "settings": "copy-only",
                             "files": {
                                 "fontawesome-webfont.eot": {},
                                 "fontawesome-webfont.svg": {},
@@ -99,7 +87,6 @@
                         "js": {
                             "directories": {
                                 "ie": {
-                                    "settings": "copy-only",
                                     "files": {
                                         "html5shiv.js": {},
                                         "PIE.htc": {},
@@ -107,7 +94,6 @@
                                     }
                                 }
                             },
-                            "settings": "copy-only",
                             "files": {
                                 "jquery.dropotron.min.js": {},
                                 "jquery.min.js": {},
@@ -119,7 +105,6 @@
                         "sass": {
                             "directories": {
                                 "libs": {
-                                    "settings": "copy-only",
                                     "files": {
                                         "_functions.scss": {},
                                         "_mixins.scss": {},
@@ -136,8 +121,14 @@
                         }
                     }
                 },
+                "html": {
+                    "files": {
+                        "index.html": {}
+                    }
+                },
                 "images": {
                     "files": {
+                        "AccountsButton.png": {},
                         "bus.png": {},
                         "LocationA.png": {},
                         "lock.png": {},
@@ -158,7 +149,6 @@
                     }
                 }
             },
-            "settings": "copy-only",
             "files": {
                 "index.html": {},
                 "left-sidebar.html": {},
@@ -171,13 +161,8 @@
         }
     },
     "execs": {
-        "compile-gateway": {
-            "cmd": ["go", "build", "-o", "bin/gateway", "github.com/geraldtivatyi/shalprin/src/gateway/cmd"],
-            "timeout": 100000,
-            "env": {"GOOS":"linux"}
-        },
-        "compile-profile": {
-            "cmd": ["go", "build", "-o", "bin/profile", "github.com/geraldtivatyi/shalprin/src/profile/cmd"],
+        "compile-shalprin": {
+            "cmd": ["go", "build", "-o", "bin/shalprin", "github.com/geraldtivatyi/shalprin/work/shalprin/cmd/test"],
             "timeout": 100000,
             "env": {"GOOS":"linux"}
         }

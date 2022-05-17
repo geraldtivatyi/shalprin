@@ -14,7 +14,6 @@ require (
 	github.com/jinzhu/gorm v1.9.16
 	github.com/jmhodges/levigo v1.0.0 // indirect
 	github.com/oligoden/chassis v0.0.13-0.20210331132959-a3211e8d7bca
-	github.com/prometheus/client_golang v1.7.1
 	github.com/remyoudompheng/bigfft v0.0.0-20200410134404-eec4a21b6bb0 // indirect
 	github.com/tecbot/gorocksdb v0.0.0-20191217155057-f0fad39f321c // indirect
 	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
