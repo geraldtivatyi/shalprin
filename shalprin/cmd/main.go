@@ -20,8 +20,8 @@ import (
 	"github.com/geraldtivatyi/shalprin/shalprin/electrician"
 	"github.com/geraldtivatyi/shalprin/shalprin/gardening"
 	"github.com/geraldtivatyi/shalprin/shalprin/plumbing"
-	"github.com/geraldtivatyi/shalprin/work/shalprin/profile"
-	"github.com/geraldtivatyi/shalprin/work/shalprin/session"
+	"github.com/geraldtivatyi/shalprin/shalprin/profile"
+	"github.com/geraldtivatyi/shalprin/shalprin/session"
 	//end
 	//+++
 	//"github.com/geraldtivatyi/shalprin/work/shalprin/profile"
