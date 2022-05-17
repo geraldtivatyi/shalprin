@@ -69,19 +69,13 @@
                             "files": {
                                 "font-awesome.min.css": {},
                                 "ie8.css": {},
-                                "images.html": {},
                                 "lib.css": {},
                                 "main.css": {}
                             }
                         },
                         "fonts": {
                             "files": {
-                                "fontawesome-webfont.eot": {},
-                                "fontawesome-webfont.svg": {},
-                                "fontawesome-webfont.ttf": {},
-                                "fontawesome-webfont.woff": {},
-                                "fontawesome-webfont.woff2": {},
-                                "FontAwesome.otf": {}
+                                "fontawesome-webfont.svg": {}
                             }
                         },
                         "js": {
@@ -119,11 +113,6 @@
                                 "main.scss": {}
                             }
                         }
-                    }
-                },
-                "html": {
-                    "files": {
-                        "index.html": {}
                     }
                 },
                 "images": {

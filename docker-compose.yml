@@ -5,13 +5,8 @@ services:
     build: .
     working_dir: /opt/shalprin
     volumes: 
-      - "./bin/gateway:/opt/shalprin/bin/shalprin"
+      - "./bin/shalprin:/opt/shalprin/bin/shalprin"
       - "./static:/opt/shalprin/static"
-    environment:
-      - "DB_NAME=test"
-      - "DB_USER=test"
-      - "DB_PASSWORD=password"
-      - "DB_ADDRESS=shalprin-db"
     ports:
       - 9000:9000
     entrypoint: /opt/shalprin/bin/shalprin

@@ -48,7 +48,7 @@ func main() {
 	mwProfileMethodHandlers := mwProfileCore.Put(dProfile.Update()).Get(dProfile.Read()).Post(dSession.CreateUser())
 
 	mux := http.NewServeMux()
-	mux.Handle("/", adapter.Core(serveFile("static/html")).Notify().Entry())
+	mux.Handle("/", adapter.Core(serveFile("static/")).Notify().Entry())
 	mux.Handle("/static/", adapter.Core(serveFiles("/static/", "static")).Entry())
 
 	mwSignin := adapter.MNA().Post(dProfile.Read()).And(dSession.Signin())
