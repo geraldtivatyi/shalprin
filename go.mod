@@ -16,8 +16,7 @@ require (
 	github.com/oligoden/chassis v0.0.13-0.20210331132959-a3211e8d7bca
 	github.com/remyoudompheng/bigfft v0.0.0-20200410134404-eec4a21b6bb0 // indirect
 	github.com/tecbot/gorocksdb v0.0.0-20191217155057-f0fad39f321c // indirect
-	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
-	golang.org/x/text v0.3.3 // indirect
+	golang.org/x/crypto v0.0.0-20220517005047-85d78b3ac167
 	google.golang.org/grpc v1.30.0
 	google.golang.org/protobuf v1.23.0
 	googlemaps.github.io/maps v1.2.1
