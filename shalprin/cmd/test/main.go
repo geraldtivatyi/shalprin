@@ -46,6 +46,8 @@ func serveFiles(p, d string) http.Handler {
 }
 
 func main() {
+	// tmpl := template.Must(template.ParseFiles("signup.html"))
+
 	store := gosql.New(dbt, uri)
 	if store.Err() != nil {
 		log.Fatal(store.Err())
